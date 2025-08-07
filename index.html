@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="keywords" content="Xie, Zhaoheng（谢肇恒）" />
+    <title>PKU-MILAB 谢肇恒主页</title>
+    <link rel="stylesheet" href="common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="common/css/index.css">
+    <!-- add:动画 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* 论文标签样式 */
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+        }
+        .tab {
+            margin-right: 10px;
+            padding: 5px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+        .tab.active {
+            background-color: rgb(138, 38, 38);
+            color: white;
+            border: 1px solid rgb(138, 38, 38);
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .paper-list {
+            display: none;
+            margin-top: 20px;
+        }
+        .paper-list.active {
+            display: block;
+        }
+        /* 新闻标签样式 */
+        .news-item {
+            display: none; /* 默认隐藏所有新闻 */
+        }
+        .show-more {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .show-less {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        /* 提示框样式 */
+        #notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* 默认隐藏 */
+            z-index: 1000;
+        }
+        /*标签样式*/
+        .number-box {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            line-height: 25px;
+            text-align: center;
+            border-radius: 3px;
+            font-size: 16px;
+            margin-right: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        /*论文标签样式*/
+        .circle-box {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            line-height: 25px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 8px;
+            margin-left: 6px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        .tag-container {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 10px;
+            background-color: #f0f0f0; /* 灰色背景 */
+            border-radius: 10px; /* 圆角 */
+            border: 1px solid #ccc;
+            padding-left: 10px;
+        }
+        .tag {
+            font-size: 16px;
+        }
+        /*兴趣标签样式*/
+        .box-container {
+            display: flex;
+            justify-content: space-between; /* 可以改为 'space-around' 或 'center' 以改变对齐方式 */
+        }
+        .box {
+            font-size: 17px;
+            width: 33%;  /* 每个div占30%的宽度 */
+            padding: 0px;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+            text-align: left;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- Copyright � 2008. Spidersoft Ltd -->
+<style>
+A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
+A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:red;background:transparent;text-decoration:none}
+A.info          {color:red;background:transparent;text-decoration:none}
+A.info:hover    {color:green;background:transparent;text-decoration:underline}
+</style>
+
+
+    <div class="container-fluid" style="padding:0 10%;">
+        <dic class="row">
+            <div class="col-md-2 col-xs-2 col-sm-2 navbar-fixed-left" >
+                <div class="warpper" >
+                    <div class="logo" >
+                    </div>
+                    <ul class="nav nav-pills nav-stacked " >
+                        <li role="presentation" class="active" ><a href="index.html">HOMEPAGE</a></li>
+                        <li role="presentation"><a href="research.html">LAB HOMEPAGE</a></li>
+                        <!-- <li role="presentation"><a href="https://qiweili00.github.io/homepage/indexCN.html">中文版本</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-10 mb20" >
+                <nav class="navbar navbar-default ">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                          <span class="sr-only">Toggle navigation</span>
+                        </button>
+                      </div>
+                    <div class="container-fluid " style="padding: 0 ;">
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                          <ul class="nav navbar-nav">
+                              <li class="active"><a href="#personal">About Me</a></li>
+                              <li><a href="#news">News</a></li>
+                              <li><a href="#direct">Research Interests</a></li>
+                              <li><a href="#paper">Publications</a></li>
+                              <li><a href="#services">Academic Service</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                </nav>
+                <div class="content">
+                    <p id="personal" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <!-- <section>
+                        <div class="my-auto" style="font-size: large;">
+                            <p align="center">
+                                <img height="240" src="common/img/bio-xzh-resized.jpg" alt="Xie Zhaoheng" hspace="9" width="180" align="right" border="0" />
+                            </p>
+                            <h3 class="mb-0">Xie, Zhaoheng（谢肇恒）</h3>
+                            </br>
+                            <p>Tenure-track Assistant Professor and Researcher, Institute of Medical Technology, Peking University Health Science Center </p>
+                            <p>Ph.D. Supervisor</p>
+                            <p>Peking University Health Science Center </p>
+                            <p>Beijing, China </p>
+                            <p>E-mail: <a href="mailto:xiezhaoheng@pku.edu.cn">xiezhaoheng@pku.edu.cn</a> </p>
+                            <br>
+                            <p align="justify" style="line-height: 30px;text-indent: 3.6rem;">
+                                I am currently an Assistant Professor and Ph.D. Supervisor at the Institute of Medical Technology, Peking University Health Science Center. I received my Bachelor's degree from Xi'an Jiaotong University and Ph.D. from Peking University. I served as a Postdoctoral Researcher at UC Davis. My research focuses on the development and application of molecular medical imaging equipment, specializing in numerical simulation and system optimization of PET/CT and PET/MRI, physical correction and image reconstruction, pharmacokinetic modeling, and AI-based medical imaging diagnostics. As a key researcher, I have participated in pioneering projects including the small animal quad-modality molecular imaging system, the world's first Total-body PET imaging system (EXPLORER), and the dedicated brain PET imaging system (NeuroEXPLORE) for the U.S. BRAIN Initiative research. I have authored 17 publications in high-impact SCI journals (e.g., MedPhy, PMB, PNAS, JNM) and 10 conference papers, with 8 patents granted (including 2 U.S. patents). I have received multiple international awards such as SNMMI Young Investigator (Best Young Scholar) and Henry N. Wagner Best Paper Award (as co-author). My research has been featured by prestigious academic media outlets including Science AAAS, Nature News, and NIH.
+                            </p>
+                            
+                        </div>
+                    </section> -->
+                    <section>
+                    <div class="my-auto" style="font-size: large;">
+                        <p align="center">
+                            <img height="240" src="common/img/bio-xzh-resized.jpg" alt="Zhaoheng Xie" hspace="9" width="180" align="right" border="0" />
+                        </p>
+                        <h3 class="mb-0">Xie, Zhaoheng（谢肇恒）</h3>
+                        <br>
+                        <p style="line-height: 28px;">
+                            <strong>Principal Investigator / Ph.D. Supervisor</strong><br>
+                            Institute of Medical Technology, Peking University<br>
+                            <br>
+                            <strong>Core PI, Facility I</strong><br>
+                            The National Biomedical Imaging Center of Peking University(NIBC)<br>
+                            <br>
+                            <strong>Assistant Director</strong><br>
+                            NMPA Key Laboratory for Medical Imaging<br>
+                        </p>
+                        <p>Email: <a href="mailto:xiezhaoheng@pku.edu.cn">xiezhaoheng@pku.edu.cn</a></p>
+                        
+                        <br>
+
+                        <p align="justify" style="line-height: 30px;">
+                            I am a Principal Investigator and Ph.D. Supervisor at the Institute of Medical Technology, Peking University. My research focuses on nuclear medicine imaging (PET/SPECT), with an emphasis on computational imaging for system development, physical correction, advanced image reconstruction, pharmacokinetic modeling, dosimetry, and AI-assisted diagnostics and therapeutics.<br>
+                            As a core member, I have played a pivotal role in developing landmark imaging systems, including the world's first small animal quad-modality molecular imaging system, the pioneering total-body PET scanner (EXPLORER), and the dedicated brain PET scanner for the U.S. BRAIN Initiative (NeuroEXPLORE).<br>
+                            I have authored over 30 papers in top-tier international SCI journals and hold 12 invention patents granted in China and the United States. I am the recipient of multiple international honors, including the SNMMI Young Investigator Award and the Alavi-Mandell Award (for the Journal of Nuclear Medicine's Best Paper). My research has been featured by prestigious outlets such as Science AAAS, Nature news, NIH.<br>
+                        </p>
+
+                        <br>
+
+                        <h4 class="mb-3 mt-4"><strong>Selected Honors & Awards</strong></h4>
+                        <ul style="line-height: 28px; padding-left: 40px;">
+                            <li>Principal Investigator of NSFC Major Project (Sub-project), 2023</li>
+                            <li>NSFC Excellent Young Scholars Fund (Overseas), 2022</li>
+                            <li>SNMMI Young Investigator Award, 2020</li>
+                            <li>SNMMI Alavi-Mandell Award (Journal of Nuclear Medicine Best Paper), 2019</li>
+                        </ul>
+                    </div>
+                </section>
+
+                    <p id="news" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section style="font-size: 1.8rem;">
+                        <h3>News</h3>
+                        <ul>
+                            <li class="news-item"><p style="color:red;">
+                                For recruitment information, please see:  <a href="https://wiki.milab.wiki/">https://wiki.milab.wiki/</a>
+                            </p></li>
+                            <li class="news-item"><p>07.2025, Our paper on a universal model for medical imaging segmentation has been accepted by Nature Communications.</p>
+                            </li>
+                            <li class="news-item"><p>06.2025, Our paper on multiorgan metabolic dysregulation in Alzheimer's disease has been accepted by the EANM'25 conference.</p>
+                            </li>
+                            <li class="news-item"><p>06.2025, One paper on multi-GPU total-body PET image reconstruction was accepted for the Fully 3D'25 conference(Oral Presentation).</p>
+                            </li>
+                            <li class="news-item"><p>06.2025, Our paper on activation functions was accepted by Neural Networks.</p>
+                            </li>
+                            <li class="news-item"><p>03.2025, One paper on brain interstitial fluid imaging was accepted by Sensing and Imaging.</p>
+                            </li>
+                            <li class="news-item"><p>10.2024, One paper on low-dose universal-tissue CT image domain adaptation for medical segmentationwas was accepted by MICCAI'24.</p>
+                            </li>
+                            <li class="news-item"><p>08.2024, One paper on lightweight MRI brain tumor segmentation with missing modalities was accepted by Expert Systems with Applications.</p>
+                            </li>
+                            <li class="news-item"><p>07.2024, One paper on a novel graphical plot in dynamic PET imaging was accepted by Physics in Medicine & Biology.</p>
+                            </li>
+                            <li class="news-item"><p>06.2024, One paper on uncertainty evaluation in dynamic PET imaging was accepted by Journal of Nuclear Medicine.</p>
+                            </li>
+                            <li class="news-item"><p>05.2024, One paper on suppressing label noise in medical image classification was accepted by Physics in Medicine & Biology.</p>
+                            </li>
+                            <li class="news-item"><p>04.2024, One paper on a prior category network (PCNet) for CT universal segmentation was accepted by IEEE Transactions on Medical Imaging.</p>
+                            </li>
+                            <li class="news-item"><p>04.2024, One paper on structure-enhanced unsupervised domain adaptation for CT whole-brain segmentation was accepted by IEEE Transactions on Radiation and Plasma Medical Sciences.</p>
+                            </li>
+                            <!-- <li class="news-item"><p>03.2024, Our patent on a PET image reconstruction method was granted (CN117648195B).</p>
+                            </li> -->
+                            <!-- <li class="news-item"><p>01.2024, Our patent on a data processing system and method was filed (CN202410191474.2).</p>
+                            </li> -->
+                            <li class="news-item"><p>11.2023, Invited to give a talk at the Total-body PET Workshop of IEEE NSS/MIC'23.</p>
+                            </li>
+                            <li class="news-item"><p>11.2023, Our paper on the optimization of coincidence sorting protocol for total-body PET was accepted by the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC).</p>
+                            </li>  
+                            <li class="news-item"><p>06.2023, One paper on fast and robust estimation of kinetic parameters in dynamic PET imaging was accepted by Journal of Nuclear Medicine.</p>
+                            </li>
+
+                            <li class="news-item"><p>06.2022, Our paper on a hybrid imaging platform for evaluating tumor necrosis was accepted by Frontiers in Oncology.</p>
+                            </li>
+                        </ul>
+                </section>
+                        <div id="show-more" class="show-more" onclick="showMoreNews()">Show More</div>
+                        <div id="show-less" class="show-less" onclick="showLessNews()">Show Less</div>
+                    </section>
+                    <p id="direct" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <!-- <section style="font-size: 1.7rem;">
+                        <h3>Research Interests</h3>
+                        <div class="box-container">
+                            <div class="box">
+                                <div class="circle-box" style="background-color: rgb(0, 0, 0);"></div><b>Open-Environment Computer Vision</b><br>
+                                <div class="number-box" style="background-color: rgb(255, 0, 0);"></div>Object Re-Identification<br>
+                                <div class="number-box" style="background-color: rgb(255, 80, 80);"></div>Fine-grained Recogniiton<br>
+                                <div class="number-box" style="background-color: rgb(255, 150, 150);"></div>Object Detection<br>
+                                <div class="number-box" style="background-color: rgb(255, 224, 224);"></div>AIGC
+                            </div>
+                            <div class="box"><div class="circle-box" style="background-color: rgb(0, 0, 0);"></div><b>Efficient Learning from Limited Data</b><br>
+                                <div class="number-box" style="background-color: rgb(0, 0, 255);"></div>Zero/Few-shot Learning<br>
+                                <div class="number-box" style="background-color: rgb(50, 50, 255);"></div>Incremental Learning<br>
+                                <div class="number-box" style="background-color: rgb(100, 100, 255);"></div>Prompt Learning<br>
+                                <div class="number-box" style="background-color: rgb(150, 150, 255);"></div>Online Learning<br>
+                                <div class="number-box" style="background-color: rgb(200, 200, 255);"></div>Noisy Learning
+                            </div>
+                            <div class="box"><div class="circle-box" style="background-color: rgb(0, 0, 0);"></div><b>Multi-Modal Learning</b><br>
+                            <div class="number-box" style="background-color: rgb(100, 50, 0);"></div>Visual-Language<br>
+                            <div class="number-box" style="background-color: rgb(150, 100, 0);"></div>2D to 3D<br>
+                            <div class="number-box" style="background-color: rgb(200, 150, 0);"></div>Visible to Thermal<br>
+                            <div class="number-box" style="background-color: rgb(250, 200, 0);"></div>Sketch to Photo
+                            </div>
+                        </div>
+                       
+                    </section> -->
+                    <!-- <section class="research-section">
+                    <h3>Research Interests</h3>
+                    <div class="research-container">
+                        <div class="research-box">
+                            <div class="icon">💻</div>
+                            <h4>
+                                <b>AI驱动的精准成像</b>
+                            </h4>
+                            <div class="keywords">
+                                通用影像分割 · 智能重建算法<br>
+                                跨模态域自适应 · 生成式模型
+                            </div>
+                        </div>
+                        <div class="research-box">
+                            <div class="icon">☢️</div>
+                            <h4>
+                                <b>前沿核医学物理</b>
+                            </h4>
+                            <div class="keywords">
+                                全身PET技术 · 多模态系统<br>
+                                蒙特卡洛模拟 · 物理校正
+                            </div>
+                        </div>
+                        <div class="research-box">
+                            <div class="icon">📈</div>
+                            <h4>
+                                <b>定量分子影像与转化</b>
+                            </h4>
+                            <div class="keywords">
+                                动态参数成像 · 快速动力学建模<br>
+                                肿瘤与神经应用 · 临床转化研究
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <section class="research-section">
+                    <h3>Research Interests</h3>
+                    <div class="research-container">
+
+                        <div class="research-box" data-aos="fade-up">
+                            <div class="research-image">
+                                <img src="common/img/interest_1.png" alt="数值模拟 & 预临床研究">
+                            </div>
+                            <h4>数值模拟 & 预临床研究</h4>
+                        </div>
+
+                        <div class="research-box" data-aos="fade-up" data-aos-delay="150">
+                            <div class="research-image">
+                                <img src="common/img/interest_2.png" alt="物理校正 & 图像重建">
+                            </div>
+                            <h4>物理校正 & 图像重建</h4>
+                        </div>
+
+                        <div class="research-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="research-image">
+                                <img src="common/img/interest_3.png" alt="动力学建模 & 参数成像">
+                            </div>
+                            <h4>动力学建模 & 参数成像</h4>
+                        </div>
+
+                        <div class="research-box" data-aos="fade-up" data-aos-delay="450">
+                            <div class="research-image">
+                                <img src="common/img/interest_4.png" alt="AI辅助诊疗">
+                            </div>
+                            <h4>AI辅助诊疗</h4>
+                        </div>
+
+                    </div>
+                    <p class="research-summary-text" data-aos="fade-up" data-aos-delay="600">
+                        <strong>临床需求为主导，技术创新为驱动</strong>
+                    </p>
+                    </section>
+                 
+                    <p id="paper" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section style="font-size: 1.8rem;">
+                        <h3>Publications</h3>
+                        <div class="tabs">
+                            <div class="tab" onclick="showPapers('patents')">Invention Patents</div>
+
+                            <div class="tab" onclick="showPapers('0000')">All Papers</div>
+                            <div class="tab" onclick="showPapers('2025')">2025</div>
+                            <div class="tab" onclick="showPapers('2024')">2024</div>
+                            <div class="tab" onclick="showPapers('2023')">2023</div>
+                            <div class="tab" onclick="showPapers('2022')">2022 and before</div>
+                        </div>
+                        
+                        <div id="notification">The bib of the selected paper has copied!</div>
+
+                        <div id="patents" class="paper-list">
+                            <ol>
+                                <li><p align="justify">焦文沛, <b>谢肇恒</b>, 陈亦新. 数据处理系统及数据处理方法. CN Patent App. CN202410191474.2.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Jiao2024, author={焦文沛 and 谢肇恒 and 陈亦新}, title={数据处理系统及数据处理方法}, number={CN202410191474.2}, year={2024}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">王曌, <b>谢肇恒</b>, 任秋实, 刘伟. 一种基于LOR编码及负载均衡的PET图像重建方法. CN Patent 117648195B.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Wang2024, author={王曌 and 谢肇恒 and 任秋实 and 刘伟}, title={一种基于LOR编码及负载均衡的PET图像重建方法}, number={CN117648195B}, year={2024}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">刘伟, <b>谢肇恒</b>, 任秋实, 卢闫晔. 一种正电子发射断层成像设备探测器及成像设备. CN Patent CN219397309U.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Liu2023, author={刘伟 and 谢肇恒 and 任秋实 and 卢闫晔}, title={一种正电子发射断层成像设备探测器及成像设备}, number={CN219397309U}, year={2023}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">Qi, J., Li, T., <b>Xie, Z.</b>, Qi, W. and Asma, E. Using neural network to estimate motion vectors for motion corrected PET image reconstruction. U.S. Patent Application 17/180,182, 2021.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Qi2021Motion, author={Qi, J. and Li, T. and Xie, Z. and Qi, W. and Asma, E.}, title={Using neural network to estimate motion vectors for motion corrected PET image reconstruction}, number={US 17/180,182}, year={2021}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">Qi, J., <b>Xie, Z.</b>, Li, T., Qi, W. and Asma, E. Scatter estimation for PET from image-based Convolutional Neural Network. U.S. Patent Application, Pending to file.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Qi2021Scatter, author={Qi, J. and Xie, Z. and Li, T. and Qi, W. and Asma, E.}, title={Scatter estimation for PET from image-based Convolutional Neural Network}, note={Pending}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">翟晓晖, <b>谢肇恒</b>, 于泽宽, 周坤, 李素莹, 田涧, 曾海宁. 一种PET‑荧光双模态术中导航成像系统及其成像方法. CN Patent App. CN201611046753.1.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Zhai2016, author={翟晓晖 and 谢肇恒 and 于泽宽 and 周坤 and 李素莹 and 田涧 and 曾海宁}, title={一种PET‑荧光双模态术中导航成像系统及其成像方法}, number={CN201611046753.1}, year={2016}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">任秋实, 杨昆, <b>谢肇恒</b>, 李素莹, 张秋实, 刘琪, 卢闫晔, 周坤, 田涧, 黄益星, 刘曦, 俞玥. 一种评估 SPECT 针孔准直器性能的测试装置及其测试方法. CN Patent ZL201310716669.6.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Ren2013, author={任秋实 and 杨昆 and 谢肇恒 and 李素莹 and 张秋实 and 刘琪 and 卢闫晔 and 周坤 and 田涧 and 黄益星 and 刘曦 and 俞玥}, title={一种评估 SPECT 针孔准直器性能的测试装置及其测试方法}, number={ZL201310716669.6}, year={2013}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">任秋实, <b>谢肇恒</b>, 李素莹, 刘琪, 刘曦, 张秋实, 卢闫晔, 周坤, 田涧. 一种基于有序子集算法的 SPECT 成像方法. CN Patent ZL201410285926.X.
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Ren2014, author={任秋实 and 谢肇恒 and 李素莹 and 刘琪 and 刘曦 and 张秋实 and 卢闫晔 and 周坤 and 田涧}, title={一种基于有序子集算法的 SPECT 成像方法}, number={ZL201410285926.X}, year={2014}}')">bib</a>]
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div id="0000" class="paper-list">
+                            <ol>
+                                <li><p align="justify">(<i><strong>Nat. Commun.'25</strong></i>) - Chen, Y.†, Gao, L.†, Gao, Y., Wang, R., Lian, J., Meng, X., Duan, Y., Chai, L., Han, H., Cheng, Z.*, and <b>Xie, Z.*</b>, "Modality-projection universal model for comprehensive full-body medical imaging segmentation", in <i>Nature Communications</i>, 2025 (Accepted)
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{chen2025modality, author={Chen, Y. and Gao, L. and Gao, Y. and Wang, R. and Lian, J. and Meng, X. and Duan, Y. and Chai, L. and Han, H. and Cheng, Z. and Xie, Z.}, title={Modality-projection universal model for comprehensive full-body medical imaging segmentation}, journal={Nature Communications}, year={2025}, note={Accepted}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Sens. Imaging'25</strong></i>) - Wang, Y., Gao, T., Su, S., Wang, T., Zhang, S., Gao Y.*, <b>Xie, Z.*</b>, and Han, H.*, "Imaging Brain Interstitial Fluid", in <i>Sensing and Imaging</i>, vol. 26, no. 1, pp. 38, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{wang2025imaging, author={Wang, Y. and Gao, T. and Su, S. and Wang, T. and Zhang, S. and Gao, Y. and Xie, Z. and Han, H.}, title={Imaging Brain Interstitial Fluid}, journal={Sensing and Imaging}, volume={26}, number={1}, pages={38}, year={2025}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1007/s11220-025-00562-0" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Neural Netw.'25</strong></i>) - Wang, Q., Zhang, S., Zeng, D., <b>Xie, Z.</b>, Guo, H., Zeng, T., and Fan, F. L.*, "Don’t fear peculiar activation functions: EUAF and beyond", in <i>Neural Networks</i>, vol. 189, pp. 107258, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{wang2025dont, author={Wang, Q. and Zhang, S. and Zeng, D. and Xie, Z. and Guo, H. and Zeng, T. and Fan, F. L.}, title={Don’t fear peculiar activation functions: EUAF and beyond}, journal={Neural Networks}, volume={189}, pages={107258}, year={2025}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>EANM'25</strong></i>) - Xu, R., Duan, Y., Gao, L., Chen, Y., Cheng, Z.*, and <b>Xie, Z.*</b>, "Multiorgan Metabolic Dysregulation in Alzheimer's Disease: Total-body PET/CT Reveals Systemic Network Interactions with Amyloid Burden", in <i>Annual Congress of the European Association of Nuclear Medicine (EANM)</i>, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xu2025multiorgan, author={Xu, R. and Duan, Y. and Gao, L. and Chen, Y. and Cheng, Z. and Xie, Z.}, title={Multiorgan Metabolic Dysregulation in Alzheimer\'s Disease: Total-body PET/CT Reveals Systemic Network Interactions with Amyloid Burden}, booktitle={Annual Congress of the European Association of Nuclear Medicine (EANM)}, year={2025}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <!-- <li><p align="justify">(<i><strong>Fully 3D'25</strong></i>) - Zhao, W., Zhao, X., Dong, Z., Ren, Q., and <b>Xie, Z.*</b>, "Load Balancing for Multi-GPU Total-Body PET Image Reconstruction", in <i>Proc. of the 18th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{zhao2025load, author={Zhao, W. and Zhao, X. and Dong, Z. and Ren, Q. and Xie, Z.}, title={Load Balancing for Multi-GPU Total-Body PET Image Reconstruction}, booktitle={Proc. of the 18th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully 3D)}, year={2025}}')">bib</a>]
+                                    </p>
+                                </li> -->
+                                <li><p align="justify">(<i><strong>Fully 3D'25</strong></i>) - Zhao, W., Zhao, X., Dong, Z., Ren, Q., and <b>Xie, Z.*</b>, "Load Balancing for Multi-GPU Total-Body PET Image Reconstruction", in <i>Proc. of the 18th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2025
+                                 <br>
+                                 [<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{zhao2025load, author={Zhao, W. and Zhao, X. and Dong, Z. and Ren, Q. and Xie, Z.}, title={Load Balancing for Multi-GPU Total-Body PET Image Reconstruction}, booktitle={Proc. of the 18th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully 3D)}, year={2025}}')">bib</a>]
+                                 [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=59768852" target="_blank">news</a>]
+                                 </p>
+                                 </li>
+                                <li><p align="justify">(<i><strong>Expert Syst. Appl.'24</strong></i>) - Zhang, X., Chen, Q., He, H., Zhu, L., <b>Xie, Z.</b>, Lu, Y.*, and Cheng, F.*, "Generative learning-based lightweight MRI brain tumor segmentation with missing modalities", in <i>Expert Systems with Applications</i>, vol. 257, pp. 125478, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2024generative, author={Zhang, X. and Chen, Q. and He, H. and Zhu, L. and Xie, Z. and Lu, Y. and Cheng, F.}, title={Generative learning-based lightweight MRI brain tumor segmentation with missing modalities}, journal={Expert Systems with Applications}, volume={257}, pages={125478}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.eswa.2024.125478" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'24</strong></i>) - Tian, Z., Zuo, Y., Xi, P., Meng, X., Shao, W., Yang, Y., Ren, Q., Yu, J.*, and <b>Xie, Z.*</b>, "A Novel Relative-Equilibrium Graphical Plot for Rapid Reversible Tracer Studies in Dynamic PET Imaging", in <i>Physics in Medicine & Biology</i>, vol. 69, no. 15, pp. 155006, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{tian2024novel, author={Tian, Z. and Zuo, Y. and Xi, P. and Meng, X. and Shao, W. and Yang, Y. and Ren, Q. and Yu, J. and Xie, Z.}, title={A Novel Relative-Equilibrium Graphical Plot for Rapid Reversible Tracer Studies in Dynamic PET Imaging}, journal={Physics in Medicine \& Biology}, volume={69}, number={15}, pages={155006}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/ad62d2" target="_blank">DOI</a>]
+                                    [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=46596519" target="_blank">news</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE Trans. Med. Imaging'24</strong></i>) - Chen, Y., Gao, Y., Han, H., Shao, W., Lu, Y., and <b>Xie, Z.*</b>, "PCNet: Prior Category Network for CT Universal Segmentation Model", in <i>IEEE Transactions on Medical Imaging</i>, vol. 43, no. 8, pp. 3154-3165, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{chen2024pcnet, author={Chen, Y. and Gao, Y. and Han, H. and Shao, W. and Lu, Y. and Xie, Z.}, title={PCNet: Prior Category Network for CT Universal Segmentation Model}, journal={IEEE Transactions on Medical Imaging}, volume={43}, number={8}, pages={3154--3165}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1109/TMI.2024.3395349" target="_blank">DOI</a>]
+                                    [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=44763230" target="_blank">news</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE Trans. Radiat. Plasma Med. Sci.'24</strong></i>) - Chen, Y., Gao, Y., Zhu, L., Li, J., Hu, J., Han, H., Lu, Y., and <b>Xie, Z.*</b>, "Structure-Enhanced Unsupervised Domain Adaptation for CT Whole-Brain Segmentation", in <i>IEEE Transactions on Radiation and Plasma Medical Sciences</i>, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{chen2024structure, author={Chen, Y. and Gao, Y. and Zhu, L. and Li, J. and Hu, J. and Han, H. and Lu, Y. and Xie, Z.}, title={Structure-Enhanced Unsupervised Domain Adaptation for CT Whole-Brain Segmentation}, journal={IEEE Transactions on Radiation and Plasma Medical Sciences}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1109/TRPMS.2024.3391285" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'24</strong></i>) - Gao, M., Jiang, H., Hu, Y., Ren, Q., <b>Xie, Z.*</b>, and Liu, J.*, "Suppressing Label Noise in Medical Image Classification Using Mixup Attention and Self-Supervised Learning", in <i>Physics in Medicine & Biology</i>, vol. 69, no. 10, pp. 105004, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{gao2024suppressing, author={Gao, M. and Jiang, H. and Hu, Y. and Ren, Q. and Xie, Z. and Liu, J.}, title={Suppressing Label Noise in Medical Image Classification Using Mixup Attention and Self-Supervised Learning}, journal={Physics in Medicine \& Biology}, volume={69}, number={10}, pages={105004}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/ad4083" target="_blank">DOI</a>]
+                                    [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=44763209" target="_blank">news</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>MICCAI'24</strong></i>) - Chen, Y., Meng, X., Wang, Y., Zeng, S., Liu, X., and <b>Xie, Z.*</b>, "LUCIDA: Low-dose Universal-tissue CT Image Domain Adaptation For Medical Segmentation", in <i>Proc. of the Intl. Conf. on Medical Image Computing and Computer-Assisted Intervention (MICCAI)</i>, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{chen2024lucida, author={Chen, Y. and Meng, X. and Wang, Y. and Zeng, S. and Liu, X. and Xie, Z.}, title={LUCIDA: Low-dose Universal-tissue CT Image Domain Adaptation For Medical Segmentation}, booktitle={Proc. of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)}, year={2024}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'24</strong></i>) - Ma, K., Shao, W., Tian, Z., Li, N., Meng, X., and <b>Xie, Z.*</b>, "Advancing Uncertainty Evaluation in Dynamic PET Imaging Through Residual Permutation and Clustering Techniques", in <i>Journal of Nuclear Medicine</i>, vol. 65, no. supplement 2, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{ma2024advancing, author={Ma, K. and Shao, W. and Tian, Z. and Li, N. and Meng, X. and Xie, Z.}, title={Advancing Uncertainty Evaluation in Dynamic PET Imaging Through Residual Permutation and Clustering Techniques}, journal={Journal of Nuclear Medicine}, volume={65}, number={supplement 2}, pages={242123}, year={2024}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Med. Phys.'23</strong></i>) - Li, T., <b>Xie, Z.</b>, Qi, W., Asma, E., and Qi, J.*, "Unsupervised deep learning framework for data-driven gating in positron emission tomography", in <i>Medical Physics</i>, vol. 50, no. 10, pp. 6142-6154, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2023unsupervised, author={Li, T. and Xie, Z. and Qi, W. and Asma, E. and Qi, J.}, title={Unsupervised deep learning framework for data-driven gating in positron emission tomography}, journal={Medical Physics}, volume={50}, number={10}, pages={6142--6154}, year={2023}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1002/mp.16642" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'23</strong></i>) - Wang, Z., Tian, Z., Peng, Q., Meng, X., Yang, Z., Ren, Q., and <b>Xie, Z.*</b>, "Optimization of Coincidence Sorting Protocol for Total-Body PET Based on Ring and Sector Difference", in <i>Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</i>, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{wang2023optimization, author={Wang, Z. and Tian, Z. and Peng, Q. and Meng, X. and Yang, Z. and Ren, Q. and Xie, Z.}, title={Optimization of Coincidence Sorting Protocol for Total-Body PET Based on Ring and Sector Difference}, booktitle={Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2023}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'23</strong></i>) - Shao, W., Chen, Y., Li, N., Yang, Y., Meng, X., and <b>Xie, Z.*</b>, "Fast and robust estimation of kinetic parameters in dynamic PET imaging using neural network-based discretization method", in <i>Journal of Nuclear Medicine</i>, vol. 64, no. supplement 1, pp. 58, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{shao2023fast, author={Shao, W. and Chen, Y. and Li, N. and Yang, Y. and Meng, X. and Xie, Z.}, title={Fast and robust estimation of kinetic parameters in dynamic PET imaging using neural network-based discretization method}, journal={Journal of Nuclear Medicine}, volume={64}, number={supplement 1}, pages={58}, year={2023}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'23</strong></i>) - <b>Xie, Z.</b>, "AI in total-body PET: Reconstruction and physics correction", (Invited Talk) in <i>Total-body PET Workshop of IEEE NSS/MIC</i>, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2023ai, author={Xie, Z.}, title={AI in total-body PET: Reconstruction and physics correction}, booktitle={Total-body PET Workshop of IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2023}, note={Invited Talk}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Front. Oncol.'22</strong></i>) - Kang, Y., Zhai, X., Lu, S., Vuletic, I., Wang, L., Zhou, K., Ren, Q.*, and <b>Xie, Z.*</b>, "A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time", in <i>Frontiers in Oncology</i>, vol. 12, pp. 772392, 2022
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{kang2022hybrid, author={Kang, Y. and Zhai, X. and Lu, S. and Vuletic, I. and Wang, L. and Zhou, K. and Xie, Z.}, title={A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time}, journal={Frontiers in Oncology}, volume={12}, pages={772392}, year={2022}}')">bib</a>]
+                                    [<a href="https://doi.org/10.3389/fonc.2022.772392" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Med. Phys.'21</strong></i>) - <b>Xie, Z.</b>, Li, T., Zhang, X., Qi, W., Asma, E., and Qi, J.*, "Anatomically aided PET image reconstruction using deep neural networks", in <i>Medical Physics</i>, vol. 48, no. 9, pp. 5244-5258, 2021
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2021anatomically, author={Xie, Z. and Li, T. and Zhang, X. and Qi, W. and Asma, E. and Qi, J.}, title={Anatomically aided PET image reconstruction using deep neural networks}, journal={Medical Physics}, volume={48}, number={9}, pages={5244--5258}, year={2021}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1002/mp.14995" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'21</strong></i>) - Lai, Y., Wang, Q., Zhou, S., <b>Xie, Z.</b>, Qi, J., Cherry, S. R., and Du, J.*, "H2RSPET: a 0.5 mm resolution high-sensitivity small-animal PET scanner, a simulation study", in <i>Physics in Medicine & Biology</i>, vol. 66, no. 6, pp. 065016, 2021
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{lai2021h2rspet, author={Lai, Y. and Wang, Q. and Zhou, S. and Xie, Z. and Qi, J. and Cherry, S. R. and Du, J.}, title={H2RSPET: a 0.5 mm resolution high-sensitivity small-animal PET scanner, a simulation study}, journal={Physics in Medicine \& Biology}, volume={66}, number={6}, pages={065016}, year={2021}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/abe7c3" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'21</strong></i>) - Zhang, X., <b>Xie, Z.</b>, Zuo, Y., Wang, G., Shi, H., Cherry, S., Badawi, R., and Qi, J.*, "4D Total-Body PET Parametric Imaging with Cardiac Modulation", in <i>Journal of Nuclear Medicine</i>, vol. 62, no. supplement 1, pp. 54, 2021
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang20214d, author={Zhang, X. and Xie, Z. and Zuo, Y. and Wang, G. and Shi, H. and Cherry, S. and Badawi, R. and Qi, J.}, title={4D Total-Body PET Parametric Imaging with Cardiac Modulation}, journal={Journal of Nuclear Medicine}, volume={62}, number={supplement 1}, pages={54}, year={2021}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'20</strong></i>) - <b>Xie, Z.</b>, Baikejiang, R., Li, T., Zhang, X., Gong, K., Zhang, M., Qi, W., Asma, E., and Qi, J.*, "Generative adversarial network based regularized image reconstruction for PET", in <i>Physics in Medicine & Biology</i>, vol. 65, no. 12, pp. 125016, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2020generative, author={Xie, Z. and Baikejiang, R. and Li, T. and Zhang, X. and Gong, K. and Zhang, M. and Qi, W. and Asma, E. and Qi, J.}, title={Generative adversarial network based regularized image reconstruction for PET}, journal={Physics in Medicine \& Biology}, volume={65}, number={12}, pages={125016}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/ab8a8a" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Alex. Eng. J.'20</strong></i>) - Yang, K., Zhai, X., <b>Xie, Z.</b>, Zhou, K., Meng, X., Ren, Q., and Lu, Y.*, "A practical calibration criterion for image-based material decomposition in spectral computed tomography", in <i>Alexandria Engineering Journal</i>, vol. 59, no. 3, pp. 1371-1379, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{yang2020practical, author={Yang, K. and Zhai, X. and Xie, Z. and Zhou, K. and Meng, X. and Ren, Q. and Lu, Y.}, title={A practical calibration criterion for image-based material decomposition in spectral computed tomography}, journal={Alexandria Engineering Journal}, volume={59}, number={3}, pages={1371--1379}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.aej.2020.03.011" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>PNAS'20</strong></i>) - Zhang, X., Cherry, S.R., <b>Xie, Z.</b>, Shi, H., Badawi, R.D., and Qi, J.*, "Subsecond total-body imaging using ultrasensitive positron emission tomography", in <i>Proceedings of the National Academy of Sciences</i>, vol. 117, no. 5, pp. 2265-2267, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2020subsecond, author={Zhang, X. and Cherry, S.R. and Xie, Z. and Shi, H. and Badawi, R.D. and Qi, J.}, title={Subsecond total-body imaging using ultrasensitive positron emission tomography}, journal={Proceedings of the National Academy of Sciences}, volume={117}, number={5}, pages={2265--2267}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1073/pnas.1917377117" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'20</strong></i>) - Zhang, X., <b>Xie, Z.</b>, Berg, E., Judenhofer, M.S., Liu, W., Xu, T., Ding, Y., Lv, Y., Dong, Y., Deng, Z., Tang, S., Cherry, S., Badawi, R., and Qi, J.*, "Total-body dynamic reconstruction and parametric imaging on the uEXPLORER", in <i>Journal of Nuclear Medicine</i>, vol. 61, no. 2, pp. 285-291, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2020totalbody, author={Zhang, X. and Xie, Z. and Berg, E. and Judenhofer, M.S. and Liu, W. and Xu, T. and Ding, Y. and Lv, Y. and Dong, Y. and Deng, Z. and Tang, S. and Cherry, S. and Badawi, R. and Qi, J.}, title={Total-body dynamic reconstruction and parametric imaging on the uEXPLORER}, journal={Journal of Nuclear Medicine}, volume={61}, number={2}, pages={285--291}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.2967/jnumed.119.231649" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'20</strong></i>) - <b>Xie, Z.</b> and Qi, J.*, "Image domain deep scatter estimation for high-temporal resolution dynamic PET", in <i>Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</i>, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2020image, author={Xie, Z. and Qi, J.}, title={Image domain deep scatter estimation for high-temporal resolution dynamic PET}, booktitle={Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2020}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'20</strong></i>) - <b>Xie, Z.</b> and Qi, J.*, "Anatomy-guided PET image reconstruction with deep neural network", in <i>Journal of Nuclear Medicine</i>, vol. 61, no. supplement 1, pp. 8, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2020anatomy, author={Xie, Z. and Qi, J.}, title={Anatomy-guided PET image reconstruction with deep neural network}, journal={Journal of Nuclear Medicine}, volume={61}, number={supplement 1}, pages={8}, year={2020}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. BUON'19</strong></i>) - Tian, J., Zhou, K., <b>Xie, Z.</b>, Xu, B., Tian, J., Chen, Y., Zhu, X., and Ren, Q.*, "An applicable method for PET/CT image quality assessment and comparison among three PET/CT systems with similar physical performance in cancer patients", in <i>Journal of BUON</i>, vol. 24, no. 6, pp. 2560-2569, 2019
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{tian2019applicable, author={Tian, J. and Zhou, K. and Xie, Z. and Xu, B. and Tian, J. and Chen, Y. and Zhu, X. and Ren, Q.}, title={An applicable method for PET/CT image quality assessment and comparison among three PET/CT systems with similar physical performance in cancer patients}, journal={Journal of BU ON.: Official Journal of the Balkan Union of Oncology}, volume={24}, number={6}, pages={2560--2569}, year={2019}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'19</strong></i>) - <b>Xie, Z.</b> and Qi, J.*, "Deep learning based PET image reconstruction protocol for inter-vendor scanners", in <i>Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</i>, 2019
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2019deep, author={Xie, Z. and Qi, J.}, title={Deep learning based PET image reconstruction protocol for inter-vendor scanners}, booktitle={Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2019}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Fully 3D'19</strong></i>) - <b>Xie, Z.</b>, Baikejiang, R., Gong, K., and Qi, J.*, "Generative adversarial networks based regularized image reconstruction for PET", in <i>Proc. of the 15th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2019
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2019generative, author={Xie, Z. and Baikejiang, R. and Gong, K. and Qi, J.}, title={Generative adversarial networks based regularized image reconstruction for PET}, booktitle={Proc. of the 15th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine}, year={2019}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Chin. Opt. Lett.'18</strong></i>) - Xia, K., Zhai, X., <b>Xie, Z.</b>, Zhou, K., Feng, Y., Zhang, G., and Li, C.*, "Dual-modal photoacoustic/CT imaging system", in <i>Chinese Optics Letters</i>, vol. 16, no. 12, pp. 121701, 2018
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xia2018dual, author={Xia, K. and Zhai, X. and Xie, Z. and Zhou, K. and Feng, Y. and Zhang, G. and Li, C.}, title={Dual-modal photoacoustic/CT imaging system}, journal={Chinese Optics Letters}, volume={16}, number={12}, pages={121701}, year={2018}}')">bib</a>]
+                                    [<a href="https://doi.org/10.3788/COL201816.121701" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Nucl. Instrum. Methods Phys. Res. A'18</strong></i>) - <b>Xie, Z.</b>, Li, S., Zhou, K., Vuletic, I., Meng, X., Zhu, S., Xu, H., Yang, K., Xu, B., Zhang, J., and Ren, Q.*, "PKU-PET-II: A novel SiPM-based PET imaging system for small animals", in <i>Nuclear Instruments and Methods in Physics Research Section A</i>, vol. 877, pp. 104-111, 2018
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2018pkupetii, author={Xie, Z. and Li, S. and Zhou, K. and Vuletic, I. and Meng, X. and Zhu, S. and Xu, H. and Yang, K. and Xu, B. and Zhang, J. and Ren, Q.}, title={PKU-PET-II: A novel SiPM-based PET imaging system for small animals}, journal={Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}, volume={877}, pages={104--111}, year={2018}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.nima.2017.09.043" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Gene Ther.'17</strong></i>) - Wang, L., Ivan, V., <b>Xie, Z.</b>, Zhou, K., Guo, Q., and Ren, Q.*, "Bifidobacterium breve as a delivery vector of IL-24 gene therapy for head and neck squamous cell carcinoma in vivo", in <i>Gene Therapy</i>, vol. 24, no. 11, pp. 699-705, 2017
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{wang2017bifidobacterium, author={Wang, L. and Ivan, V. and Xie, Z. and Zhou, K. and Guo, Q. and Ren, Q.}, title={Bifidobacterium breve as a delivery vector of IL-24 gene therapy for head and neck squamous cell carcinoma in vivo}, journal={Gene therapy}, volume={24}, number={11}, pages={699--705}, year={2017}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1038/gt.2017.75" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>JINST'17</strong></i>) - Li, S., Zhang, Q., Ivan, V., <b>Xie, Z.</b>, Yang, K., and Ren, Q.*, "Monte Carlo simulation of Ray-Scan 64 PET system and performance evaluation using GATE toolkit", in <i>Journal of Instrumentation</i>, vol. 12, no. 02, pp. T02001, 2017
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2017monte, author={Li, S. and Zhang, Q. and Ivan, V. and Xie, Z. and Yang, K. and Ren, Q.}, title={Monte Carlo simulation of Ray-Scan 64 PET system and performance evaluation using GATE toolkit}, journal={Journal of Instrumentation}, volume={12}, number={02}, pages={T02001}, year={2017}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1748-0221/12/02/T02001" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Fully 3D'17</strong></i>) - <b>Xie, Z.</b>, Zhou, K., Lu, Y., Yang, K., and Ren, Q.*, "A Novel Reconstruction Algorithm for Positron Emission Tomography Based on 3-D Data Rebinning", in <i>Proc. of the 14th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2017
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2017novel, author={Xie, Z. and Zhou, K. and Lu, Y. and Yang, K. and Ren, Q.}, title={A Novel Reconstruction Algorithm for Positron Emission Tomography Based on 3-D Data Rebinning}, booktitle={Proc. of the 14th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine}, year={2017}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Sensors'16</strong></i>) - <b>Xie, Z.</b>#, Li, S.#, Yang, K., Xu, B., and Ren, Q.*, "Evaluation of a Wobbling Method Applied to Correcting Defective Pixels of CZT Detectors in SPECT Imaging", in <i>Sensors</i>, vol. 16, no. 6, pp. 772, 2016
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2016evaluation, author={Xie, Z. and Li, S. and Yang, K. and Xu, B. and Ren, Q.}, title={Evaluation of a Wobbling Method Applied to Correcting Defective Pixels of CZT Detectors in SPECT Imaging}, journal={Sensors}, volume={16}, number={6}, pages={772}, year={2016}}')">bib</a>]
+                                    [<a href="https://doi.org/10.3390/s16060772" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Chin. Phys. Lett.'16</strong></i>) - Li, S.#, <b>Xie, Z.</b>#, Huang, Z., Yang, K., Xu, B., and Ren, Q.*, "Off-axis imaging in keel-edge pinhole SPECT system based on Monte Carlo simulation", in <i>Chinese Physics Letters</i>, vol. 33, no. 4, pp. 048701, 2016
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2016offaxis, author={Li, S. and Xie, Z. and Huang, Z. and Yang, K. and Xu, B. and Ren, Q.}, title={Off-axis imaging in keel-edge pinhole SPECT system based on Monte Carlo simulation}, journal={Chinese Physics Letters}, volume={33}, number={4}, pages={048701}, year={2016}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/0256-307X/33/4/048701" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Nucl. Instrum. Methods Phys. Res. A'15</strong></i>) - Li, S., Zhang, Q., <b>Xie, Z.</b>, Yang, K., and Ren, Q.*, "GATE simulation of a LYSO-based SPECT imager: Validation and detector optimization", in <i>Nuclear Instruments and Methods in Physics Research Section A</i>, vol. 773, pp. 21-26, 2015
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2015gate, author={Li, S. and Zhang, Q. and Xie, Z. and Yang, K. and Ren, Q.}, title={GATE simulation of a LYSO-based SPECT imager: Validation and detector optimization}, journal={Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}, volume={773}, pages={21--26}, year={2015}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.nima.2014.11.050" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>WMIC'14</strong></i>) - <b>Xie, Z.</b>, Zhou, K., Li, S., Yang, K., and Ren, Q.*, "An integrated Quad-Modality Molecular Imaging System for Small Animals", in <i>Proc. of the World Molecular Imaging Congress (WMIC)</i>, 2014
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2014integrated, author={Xie, Z. and Zhou, K. and Li, S. and Yang, K. and Ren, Q.}, title={An integrated Quad-Modality Molecular Imaging System for Small Animals}, booktitle={Proc. of the World Molecular Imaging Congress (WMIC)}, year={2014}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Semicond. Optoelectron.'13</strong></i>) - Zhang, Q., Lu, Y., <b>Xie, Z.</b>, Yang, K., and Ren, Q.*, "Progress in the development of CdZnTe unipolar sensing detector for medical imaging", in <i>Semiconductor Optoelectronics</i>, vol. 34, no. 2, pp. 171-179, 2013
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2013progress, author={Zhang, Q. and Lu, Y. and Xie, Z. and Yang, K. and Ren, Q.}, title={Progress in the development of CdZnTe unipolar sensing detector for medical imaging}, journal={Semiconductor Optoelectronics}, volume={34}, number={2}, pages={171--179}, year={2013}}')">bib</a>]
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div id="2025" class="paper-list active">
+                            <ol>
+                                <li><p align="justify">(<i><strong>Nat. Commun.'25</strong></i>) - Chen, Y.†, Gao, L.†, Gao, Y., Wang, R., Lian, J., Meng, X., Duan, Y., Chai, L., Han, H., Cheng, Z.*, and <b>Xie, Z.*</b>, "Modality-projection universal model for comprehensive full-body medical imaging segmentation", in <i>Nature Communications</i>, 2025 (Accepted)
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{chen2025modality, author={Chen, Y. and Gao, L. and Gao, Y. and Wang, R. and Lian, J. and Meng, X. and Duan, Y. and Chai, L. and Han, H. and Cheng, Z. and Xie, Z.}, title={Modality-projection universal model for comprehensive full-body medical imaging segmentation}, journal={Nature Communications}, year={2025}, note={Accepted}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Sens. Imaging'25</strong></i>) - Wang, Y., Gao, T., Su, S., Wang, T., Zhang, S., Gao Y.*, <b>Xie, Z.*</b>, and Han, H.*, "Imaging Brain Interstitial Fluid", in <i>Sensing and Imaging</i>, vol. 26, no. 1, pp. 38, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{wang2025imaging, author={Wang, Y. and Gao, T. and Su, S. and Wang, T. and Zhang, S. and Gao, Y. and Xie, Z. and Han, H.}, title={Imaging Brain Interstitial Fluid}, journal={Sensing and Imaging}, volume={26}, number={1}, pages={38}, year={2025}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1007/s11220-025-00562-0" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Neural Netw.'25</strong></i>) - Wang, Q., Zhang, S., Zeng, D., <b>Xie, Z.</b>, Guo, H., Zeng, T., and Fan, F. L.*, "Don’t fear peculiar activation functions: EUAF and beyond", in <i>Neural Networks</i>, vol. 189, pp. 107258, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{wang2025dont, author={Wang, Q. and Zhang, S. and Zeng, D. and Xie, Z. and Guo, H. and Zeng, T. and Fan, F. L.}, title={Don’t fear peculiar activation functions: EUAF and beyond}, journal={Neural Networks}, volume={189}, pages={107258}, year={2025}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>EANM'25</strong></i>) - Xu, R., Duan, Y., Gao, L., Chen, Y., Cheng, Z.*, and <b>Xie, Z.*</b>, "Multiorgan Metabolic Dysregulation in Alzheimer's Disease: Total-body PET/CT Reveals Systemic Network Interactions with Amyloid Burden", in <i>Annual Congress of the European Association of Nuclear Medicine (EANM)</i>, 2025
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xu2025multiorgan, author={Xu, R. and Duan, Y. and Gao, L. and Chen, Y. and Cheng, Z. and Xie, Z.}, title={Multiorgan Metabolic Dysregulation in Alzheimer\'s Disease: Total-body PET/CT Reveals Systemic Network Interactions with Amyloid Burden}, booktitle={Annual Congress of the European Association of Nuclear Medicine (EANM)}, year={2025}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Fully 3D'25</strong></i>) - Zhao, W., Zhao, X., Dong, Z., Ren, Q., and <b>Xie, Z.*</b>, "Load Balancing for Multi-GPU Total-Body PET Image Reconstruction", in <i>Proc. of the 18th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2025
+                                 <br>
+                                 [<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{zhao2025load, author={Zhao, W. and Zhao, X. and Dong, Z. and Ren, Q. and Xie, Z.}, title={Load Balancing for Multi-GPU Total-Body PET Image Reconstruction}, booktitle={Proc. of the 18th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully 3D)}, year={2025}}')">bib</a>]
+                                 [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=59768852" target="_blank">news</a>]
+                                 </p>
+                                 </li>
+                            </ol>
+                        </div>
+
+                        <div id="2024" class="paper-list">
+                            <ol>
+                                <li><p align="justify">(<i><strong>Expert Syst. Appl.'24</strong></i>) - Zhang, X., Chen, Q., He, H., Zhu, L., <b>Xie, Z.</b>, Lu, Y.*, and Cheng, F.*, "Generative learning-based lightweight MRI brain tumor segmentation with missing modalities", in <i>Expert Systems with Applications</i>, vol. 257, pp. 125478, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2024generative, author={Zhang, X. and Chen, Q. and He, H. and Zhu, L. and Xie, Z. and Lu, Y. and Cheng, F.}, title={Generative learning-based lightweight MRI brain tumor segmentation with missing modalities}, journal={Expert Systems with Applications}, volume={257}, pages={125478}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.eswa.2024.125478" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'24</strong></i>) - Tian, Z., Zuo, Y., Xi, P., Meng, X., Shao, W., Yang, Y., Ren, Q., Yu, J.*, and <b>Xie, Z.*</b>, "A Novel Relative-Equilibrium Graphical Plot for Rapid Reversible Tracer Studies in Dynamic PET Imaging", in <i>Physics in Medicine & Biology</i>, vol. 69, no. 15, pp. 155006, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{tian2024novel, author={Tian, Z. and Zuo, Y. and Xi, P. and Meng, X. and Shao, W. and Yang, Y. and Ren, Q. and Yu, J. and Xie, Z.}, title={A Novel Relative-Equilibrium Graphical Plot for Rapid Reversible Tracer Studies in Dynamic PET Imaging}, journal={Physics in Medicine \& Biology}, volume={69}, number={15}, pages={155006}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/ad62d2" target="_blank">DOI</a>]
+                                     [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=46596519" target="_blank">news</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE Trans. Med. Imaging'24</strong></i>) - Chen, Y., Gao, Y., Han, H., Shao, W., Lu, Y., and <b>Xie, Z.*</b>, "PCNet: Prior Category Network for CT Universal Segmentation Model", in <i>IEEE Transactions on Medical Imaging</i>, vol. 43, no. 8, pp. 3154-3165, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{chen2024pcnet, author={Chen, Y. and Gao, Y. and Han, H. and Shao, W. and Lu, Y. and Xie, Z.}, title={PCNet: Prior Category Network for CT Universal Segmentation Model}, journal={IEEE Transactions on Medical Imaging}, volume={43}, number={8}, pages={3154--3165}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1109/TMI.2024.3395349" target="_blank">DOI</a>]
+                                    [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=44763230" target="_blank">news</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE Trans. Radiat. Plasma Med. Sci.'24</strong></i>) - Chen, Y., Gao, Y., Zhu, L., Li, J., Hu, J., Han, H., Lu, Y., and <b>Xie, Z.*</b>, "Structure-Enhanced Unsupervised Domain Adaptation for CT Whole-Brain Segmentation", in <i>IEEE Transactions on Radiation and Plasma Medical Sciences</i>, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{chen2024structure, author={Chen, Y. and Gao, Y. and Zhu, L. and Li, J. and Hu, J. and Han, H. and Lu, Y. and Xie, Z.}, title={Structure-Enhanced Unsupervised Domain Adaptation for CT Whole-Brain Segmentation}, journal={IEEE Transactions on Radiation and Plasma Medical Sciences}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1109/TRPMS.2024.3391285" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'24</strong></i>) - Gao, M., Jiang, H., Hu, Y., Ren, Q., <b>Xie, Z.*</b>, and Liu, J.*, "Suppressing Label Noise in Medical Image Classification Using Mixup Attention and Self-Supervised Learning", in <i>Physics in Medicine & Biology</i>, vol. 69, no. 10, pp. 105004, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{gao2024suppressing, author={Gao, M. and Jiang, H. and Hu, Y. and Ren, Q. and Xie, Z. and Liu, J.}, title={Suppressing Label Noise in Medical Image Classification Using Mixup Attention and Self-Supervised Learning}, journal={Physics in Medicine \& Biology}, volume={69}, number={10}, pages={105004}, year={2024}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/ad4083" target="_blank">DOI</a>]
+                                    [<a href="https://wiki.milab.wiki/pages/viewpage.action?pageId=44763209" target="_blank">news</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>MICCAI'24</strong></i>) - Chen, Y., Meng, X., Wang, Y., Zeng, S., Liu, X., and <b>Xie, Z.*</b>, "LUCIDA: Low-dose Universal-tissue CT Image Domain Adaptation For Medical Segmentation", in <i>Proc. of the Intl. Conf. on Medical Image Computing and Computer-Assisted Intervention (MICCAI)</i>, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{chen2024lucida, author={Chen, Y. and Meng, X. and Wang, Y. and Zeng, S. and Liu, X. and Xie, Z.}, title={LUCIDA: Low-dose Universal-tissue CT Image Domain Adaptation For Medical Segmentation}, booktitle={Proc. of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)}, year={2024}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'24</strong></i>) - Ma, K., Shao, W., Tian, Z., Li, N., Meng, X., and <b>Xie, Z.*</b>, "Advancing Uncertainty Evaluation in Dynamic PET Imaging Through Residual Permutation and Clustering Techniques", in <i>Journal of Nuclear Medicine</i>, vol. 65, no. supplement 2, 2024
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{ma2024advancing, author={Ma, K. and Shao, W. and Tian, Z. and Li, N. and Meng, X. and Xie, Z.}, title={Advancing Uncertainty Evaluation in Dynamic PET Imaging Through Residual Permutation and Clustering Techniques}, journal={Journal of Nuclear Medicine}, volume={65}, number={supplement 2}, pages={242123}, year={2024}}')">bib</a>]
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div id="2023" class="paper-list">
+                            <ol>
+                                <li><p align="justify">(<i><strong>Med. Phys.'23</strong></i>) - Li, T., <b>Xie, Z.</b>, Qi, W., Asma, E., and Qi, J.*, "Unsupervised deep learning framework for data-driven gating in positron emission tomography", in <i>Medical Physics</i>, vol. 50, no. 10, pp. 6142-6154, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2023unsupervised, author={Li, T. and Xie, Z. and Qi, W. and Asma, E. and Qi, J.}, title={Unsupervised deep learning framework for data-driven gating in positron emission tomography}, journal={Medical Physics}, volume={50}, number={10}, pages={6142--6154}, year={2023}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1002/mp.16642" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'23</strong></i>) - Wang, Z., Tian, Z., Peng, Q., Meng, X., Yang, Z., Ren, Q., and <b>Xie, Z.*</b>, "Optimization of Coincidence Sorting Protocol for Total-Body PET Based on Ring and Sector Difference", in <i>Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</i>, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{wang2023optimization, author={Wang, Z. and Tian, Z. and Peng, Q. and Meng, X. and Yang, Z. and Ren, Q. and Xie, Z.}, title={Optimization of Coincidence Sorting Protocol for Total-Body PET Based on Ring and Sector Difference}, booktitle={Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2023}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'23</strong></i>) - Shao, W., Chen, Y., Li, N., Yang, Y., Meng, X., and <b>Xie, Z.*</b>, "Fast and robust estimation of kinetic parameters in dynamic PET imaging using neural network-based discretization method", in <i>Journal of Nuclear Medicine</i>, vol. 64, no. supplement 1, pp. 58, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{shao2023fast, author={Shao, W. and Chen, Y. and Li, N. and Yang, Y. and Meng, X. and Xie, Z.}, title={Fast and robust estimation of kinetic parameters in dynamic PET imaging using neural network-based discretization method}, journal={Journal of Nuclear Medicine}, volume={64}, number={supplement 1}, pages={58}, year={2023}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'23</strong></i>) - <b>Xie, Z.</b>, "AI in total-body PET: Reconstruction and physics correction", (Invited Talk) in <i>Total-body PET Workshop of IEEE NSS/MIC</i>, 2023
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2023ai, author={Xie, Z.}, title={AI in total-body PET: Reconstruction and physics correction}, booktitle={Total-body PET Workshop of IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2023}, note={Invited Talk}}')">bib</a>]
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div id="2022" class="paper-list">
+                            <ol>
+                                <li><p align="justify">(<i><strong>Front. Oncol.'22</strong></i>) - Kang, Y., Zhai, X., Lu, S., Vuletic, I., Wang, L., Zhou, K., Ren, Q.*, and <b>Xie, Z.*</b>, "A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time", in <i>Frontiers in Oncology</i>, vol. 12, pp. 772392, 2022
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{kang2022hybrid, author={Kang, Y. and Zhai, X. and Lu, S. and Vuletic, I. and Wang, L. and Zhou, K. and Xie, Z.}, title={A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time}, journal={Frontiers in Oncology}, volume={12}, pages={772392}, year={2022}}')">bib</a>]
+                                    [<a href="https://doi.org/10.3389/fonc.2022.772392" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Med. Phys.'21</strong></i>) - <b>Xie, Z.</b>, Li, T., Zhang, X., Qi, W., Asma, E., and Qi, J.*, "Anatomically aided PET image reconstruction using deep neural networks", in <i>Medical Physics</i>, vol. 48, no. 9, pp. 5244-5258, 2021
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2021anatomically, author={Xie, Z. and Li, T. and Zhang, X. and Qi, W. and Asma, E. and Qi, J.}, title={Anatomically aided PET image reconstruction using deep neural networks}, journal={Medical Physics}, volume={48}, number={9}, pages={5244--5258}, year={2021}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1002/mp.14995" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'21</strong></i>) - Lai, Y., Wang, Q., Zhou, S., <b>Xie, Z.</b>, Qi, J., Cherry, S. R., and Du, J.*, "H2RSPET: a 0.5 mm resolution high-sensitivity small-animal PET scanner, a simulation study", in <i>Physics in Medicine & Biology</i>, vol. 66, no. 6, pp. 065016, 2021
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{lai2021h2rspet, author={Lai, Y. and Wang, Q. and Zhou, S. and Xie, Z. and Qi, J. and Cherry, S. R. and Du, J.}, title={H2RSPET: a 0.5 mm resolution high-sensitivity small-animal PET scanner, a simulation study}, journal={Physics in Medicine \& Biology}, volume={66}, number={6}, pages={065016}, year={2021}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/abe7c3" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'21</strong></i>) - Zhang, X., <b>Xie, Z.</b>, Zuo, Y., Wang, G., Shi, H., Cherry, S., Badawi, R., and Qi, J.*, "4D Total-Body PET Parametric Imaging with Cardiac Modulation", in <i>Journal of Nuclear Medicine</i>, vol. 62, no. supplement 1, pp. 54, 2021
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang20214d, author={Zhang, X. and Xie, Z. and Zuo, Y. and Wang, G. and Shi, H. and Cherry, S. and Badawi, R. and Qi, J.}, title={4D Total-Body PET Parametric Imaging with Cardiac Modulation}, journal={Journal of Nuclear Medicine}, volume={62}, number={supplement 1}, pages={54}, year={2021}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Phys. Med. Biol.'20</strong></i>) - <b>Xie, Z.</b>, Baikejiang, R., Li, T., Zhang, X., Gong, K., Zhang, M., Qi, W., Asma, E., and Qi, J.*, "Generative adversarial network based regularized image reconstruction for PET", in <i>Physics in Medicine & Biology</i>, vol. 65, no. 12, pp. 125016, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2020generative, author={Xie, Z. and Baikejiang, R. and Li, T. and Zhang, X. and Gong, K. and Zhang, M. and Qi, W. and Asma, E. and Qi, J.}, title={Generative adversarial network based regularized image reconstruction for PET}, journal={Physics in Medicine \& Biology}, volume={65}, number={12}, pages={125016}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1361-6560/ab8a8a" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Alex. Eng. J.'20</strong></i>) - Yang, K., Zhai, X., <b>Xie, Z.</b>, Zhou, K., Meng, X., Ren, Q., and Lu, Y.*, "A practical calibration criterion for image-based material decomposition in spectral computed tomography", in <i>Alexandria Engineering Journal</i>, vol. 59, no. 3, pp. 1371-1379, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{yang2020practical, author={Yang, K. and Zhai, X. and Xie, Z. and Zhou, K. and Meng, X. and Ren, Q. and Lu, Y.}, title={A practical calibration criterion for image-based material decomposition in spectral computed tomography}, journal={Alexandria Engineering Journal}, volume={59}, number={3}, pages={1371--1379}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.aej.2020.03.011" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>PNAS'20</strong></i>) - Zhang, X., Cherry, S.R., <b>Xie, Z.</b>, Shi, H., Badawi, R.D., and Qi, J.*, "Subsecond total-body imaging using ultrasensitive positron emission tomography", in <i>Proceedings of the National Academy of Sciences</i>, vol. 117, no. 5, pp. 2265-2267, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2020subsecond, author={Zhang, X. and Cherry, S.R. and Xie, Z. and Shi, H. and Badawi, R.D. and Qi, J.}, title={Subsecond total-body imaging using ultrasensitive positron emission tomography}, journal={Proceedings of the National Academy of Sciences}, volume={117}, number={5}, pages={2265--2267}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1073/pnas.1917377117" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'20</strong></i>) - Zhang, X., <b>Xie, Z.</b>, Berg, E., Judenhofer, M.S., Liu, W., Xu, T., Ding, Y., Lv, Y., Dong, Y., Deng, Z., Tang, S., Cherry, S., Badawi, R., and Qi, J.*, "Total-body dynamic reconstruction and parametric imaging on the uEXPLORER", in <i>Journal of Nuclear Medicine</i>, vol. 61, no. 2, pp. 285-291, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2020totalbody, author={Zhang, X. and Xie, Z. and Berg, E. and Judenhofer, M.S. and Liu, W. and Xu, T. and Ding, Y. and Lv, Y. and Dong, Y. and Deng, Z. and Tang, S. and Cherry, S. and Badawi, R. and Qi, J.}, title={Total-body dynamic reconstruction and parametric imaging on the uEXPLORER}, journal={Journal of Nuclear Medicine}, volume={61}, number={2}, pages={285--291}, year={2020}}')">bib</a>]
+                                    [<a href="https://doi.org/10.2967/jnumed.119.231649" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'20</strong></i>) - <b>Xie, Z.</b> and Qi, J.*, "Image domain deep scatter estimation for high-temporal resolution dynamic PET", in <i>Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</i>, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2020image, author={Xie, Z. and Qi, J.}, title={Image domain deep scatter estimation for high-temporal resolution dynamic PET}, booktitle={Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2020}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. Nucl. Med.'20</strong></i>) - <b>Xie, Z.</b> and Qi, J.*, "Anatomy-guided PET image reconstruction with deep neural network", in <i>Journal of Nuclear Medicine</i>, vol. 61, no. supplement 1, pp. 8, 2020
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2020anatomy, author={Xie, Z. and Qi, J.}, title={Anatomy-guided PET image reconstruction with deep neural network}, journal={Journal of Nuclear Medicine}, volume={61}, number={supplement 1}, pages={8}, year={2020}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>J. BUON'19</strong></i>) - Tian, J., Zhou, K., <b>Xie, Z.</b>, Xu, B., Tian, J., Chen, Y., Zhu, X., and Ren, Q.*, "An applicable method for PET/CT image quality assessment and comparison among three PET/CT systems with similar physical performance in cancer patients", in <i>Journal of BUON</i>, vol. 24, no. 6, pp. 2560-2569, 2019
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{tian2019applicable, author={Tian, J. and Zhou, K. and Xie, Z. and Xu, B. and Tian, J. and Chen, Y. and Zhu, X. and Ren, Q.}, title={An applicable method for PET/CT image quality assessment and comparison among three PET/CT systems with similar physical performance in cancer patients}, journal={Journal of BU ON.: Official Journal of the Balkan Union of Oncology}, volume={24}, number={6}, pages={2560--2569}, year={2019}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>IEEE NSS/MIC'19</strong></i>) - <b>Xie, Z.</b> and Qi, J.*, "Deep learning based PET image reconstruction protocol for inter-vendor scanners", in <i>Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</i>, 2019
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2019deep, author={Xie, Z. and Qi, J.}, title={Deep learning based PET image reconstruction protocol for inter-vendor scanners}, booktitle={Proc. of the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)}, year={2019}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Fully 3D'19</strong></i>) - <b>Xie, Z.</b>, Baikejiang, R., Gong, K., and Qi, J.*, "Generative adversarial networks based regularized image reconstruction for PET", in <i>Proc. of the 15th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2019
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2019generative, author={Xie, Z. and Baikejiang, R. and Gong, K. and Qi, J.}, title={Generative adversarial networks based regularized image reconstruction for PET}, booktitle={Proc. of the 15th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine}, year={2019}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Chin. Opt. Lett.'18</strong></i>) - Xia, K., Zhai, X., <b>Xie, Z.</b>, Zhou, K., Feng, Y., Zhang, G., and Li, C.*, "Dual-modal photoacoustic/CT imaging system", in <i>Chinese Optics Letters</i>, vol. 16, no. 12, pp. 121701, 2018
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xia2018dual, author={Xia, K. and Zhai, X. and Xie, Z. and Zhou, K. and Feng, Y. and Zhang, G. and Li, C.}, title={Dual-modal photoacoustic/CT imaging system}, journal={Chinese Optics Letters}, volume={16}, number={12}, pages={121701}, year={2018}}')">bib</a>]
+                                    [<a href="https://doi.org/10.3788/COL201816.121701" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Nucl. Instrum. Methods Phys. Res. A'18</strong></i>) - <b>Xie, Z.</b>, Li, S., Zhou, K., Vuletic, I., Meng, X., Zhu, S., Xu, H., Yang, K., Xu, B., Zhang, J., and Ren, Q.*, "PKU-PET-II: A novel SiPM-based PET imaging system for small animals", in <i>Nuclear Instruments and Methods in Physics Research Section A</i>, vol. 877, pp. 104-111, 2018
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2018pkupetii, author={Xie, Z. and Li, S. and Zhou, K. and Vuletic, I. and Meng, X. and Zhu, S. and Xu, H. and Yang, K. and Xu, B. and Zhang, J. and Ren, Q.}, title={PKU-PET-II: A novel SiPM-based PET imaging system for small animals}, journal={Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}, volume={877}, pages={104--111}, year={2018}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.nima.2017.09.043" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Gene Ther.'17</strong></i>) - Wang, L., Ivan, V., <b>Xie, Z.</b>, Zhou, K., Guo, Q., and Ren, Q.*, "Bifidobacterium breve as a delivery vector of IL-24 gene therapy for head and neck squamous cell carcinoma in vivo", in <i>Gene Therapy</i>, vol. 24, no. 11, pp. 699-705, 2017
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{wang2017bifidobacterium, author={Wang, L. and Ivan, V. and Xie, Z. and Zhou, K. and Guo, Q. and Ren, Q.}, title={Bifidobacterium breve as a delivery vector of IL-24 gene therapy for head and neck squamous cell carcinoma in vivo}, journal={Gene therapy}, volume={24}, number={11}, pages={699--705}, year={2017}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1038/gt.2017.75" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>JINST'17</strong></i>) - Li, S., Zhang, Q., Ivan, V., <b>Xie, Z.</b>, Yang, K., and Ren, Q.*, "Monte Carlo simulation of Ray-Scan 64 PET system and performance evaluation using GATE toolkit", in <i>Journal of Instrumentation</i>, vol. 12, no. 02, pp. T02001, 2017
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2017monte, author={Li, S. and Zhang, Q. and Ivan, V. and Xie, Z. and Yang, K. and Ren, Q.}, title={Monte Carlo simulation of Ray-Scan 64 PET system and performance evaluation using GATE toolkit}, journal={Journal of Instrumentation}, volume={12}, number={02}, pages={T02001}, year={2017}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/1748-0221/12/02/T02001" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Fully 3D'17</strong></i>) - <b>Xie, Z.</b>, Zhou, K., Lu, Y., Yang, K., and Ren, Q.*, "A Novel Reconstruction Algorithm for Positron Emission Tomography Based on 3-D Data Rebinning", in <i>Proc. of the 14th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2017
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2017novel, author={Xie, Z. and Zhou, K. and Lu, Y. and Yang, K. and Ren, Q.}, title={A Novel Reconstruction Algorithm for Positron Emission Tomography Based on 3-D Data Rebinning}, booktitle={Proc. of the 14th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine}, year={2017}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Sensors'16</strong></i>) - <b>Xie, Z.</b>#, Li, S.#, Yang, K., Xu, B., and Ren, Q.*, "Evaluation of a Wobbling Method Applied to Correcting Defective Pixels of CZT Detectors in SPECT Imaging", in <i>Sensors</i>, vol. 16, no. 6, pp. 772, 2016
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{xie2016evaluation, author={Xie, Z. and Li, S. and Yang, K. and Xu, B. and Ren, Q.}, title={Evaluation of a Wobbling Method Applied to Correcting Defective Pixels of CZT Detectors in SPECT Imaging}, journal={Sensors}, volume={16}, number={6}, pages={772}, year={2016}}')">bib</a>]
+                                    [<a href="https://doi.org/10.3390/s16060772" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Chin. Phys. Lett.'16</strong></i>) - Li, S.#, <b>Xie, Z.</b>#, Huang, Z., Yang, K., Xu, B., and Ren, Q.*, "Off-axis imaging in keel-edge pinhole SPECT system based on Monte Carlo simulation", in <i>Chinese Physics Letters</i>, vol. 33, no. 4, pp. 048701, 2016
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2016offaxis, author={Li, S. and Xie, Z. and Huang, Z. and Yang, K. and Xu, B. and Ren, Q.}, title={Off-axis imaging in keel-edge pinhole SPECT system based on Monte Carlo simulation}, journal={Chinese Physics Letters}, volume={33}, number={4}, pages={048701}, year={2016}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1088/0256-307X/33/4/048701" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Nucl. Instrum. Methods Phys. Res. A'15</strong></i>) - Li, S., Zhang, Q., <b>Xie, Z.</b>, Yang, K., and Ren, Q.*, "GATE simulation of a LYSO-based SPECT imager: Validation and detector optimization", in <i>Nuclear Instruments and Methods in Physics Research Section A</i>, vol. 773, pp. 21-26, 2015
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{li2015gate, author={Li, S. and Zhang, Q. and Xie, Z. and Yang, K. and Ren, Q.}, title={GATE simulation of a LYSO-based SPECT imager: Validation and detector optimization}, journal={Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}, volume={773}, pages={21--26}, year={2015}}')">bib</a>]
+                                    [<a href="https://doi.org/10.1016/j.nima.2014.11.050" target="_blank">DOI</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>WMIC'14</strong></i>) - <b>Xie, Z.</b>, Zhou, K., Li, S., Yang, K., and Ren, Q.*, "An integrated Quad-Modality Molecular Imaging System for Small Animals", in <i>Proc. of the World Molecular Imaging Congress (WMIC)</i>, 2014
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xie2014integrated, author={Xie, Z. and Zhou, K. and Li, S. and Yang, K. and Ren, Q.}, title={An integrated Quad-Modality Molecular Imaging System for Small Animals}, booktitle={Proc. of the World Molecular Imaging Congress (WMIC)}, year={2014}}')">bib</a>]
+                                    </p>
+                                </li>
+                                <li><p align="justify">(<i><strong>Semicond. Optoelectron.'13</strong></i>) - Zhang, Q., Lu, Y., <b>Xie, Z.</b>, Yang, K., and Ren, Q.*, "Progress in the development of CdZnTe unipolar sensing detector for medical imaging", in <i>Semiconductor Optoelectronics</i>, vol. 34, no. 2, pp. 171-179, 2013
+                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{zhang2013progress, author={Zhang, Q. and Lu, Y. and Xie, Z. and Yang, K. and Ren, Q.}, title={Progress in the development of CdZnTe unipolar sensing detector for medical imaging}, journal={Semiconductor Optoelectronics}, volume={34}, number={2}, pages={171--179}, year={2013}}')">bib</a>]
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <p><b>Note</b>: * indicates the corresponding author; †/# indicates equal contribution.</p>
+                    </section>
+
+                    <p id="services" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section style="font-size: 1.8rem;">
+                        <h3>Academic Service</h3>
+                        <br>
+
+                        <table style="width:100%; font-size:18px; border: 0;">
+                            <tr style="height: 30px;">
+                                <th>Membership (会员):</th>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>Institute of Electrical and Electronics Engineers (IEEE)</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>Society of Nuclear Medicine and Molecular Imaging (SNMMI)</li></ul></td>
+                            </tr>
+
+                            <tr style="height: 30px;"><td colspan="2">&nbsp;</td></tr>
+
+                            <tr style="height: 30px;">
+                                <th>Journal Reviewer (期刊审稿人):</th>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>IEEE Transactions on Medical Imaging</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>IEEE Transactions on Radiation and Plasma Medical Sciences</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>IEEE Journal of Selected Topics in Signal Processing</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>Physics in Medicine and Biology</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>Medical Physics</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>Nuclear Instruments and Methods in Physics Research Section A</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>BMC Research Notes</li></ul></td>
+                            </tr>
+
+                            <tr style="height: 30px;"><td colspan="2">&nbsp;</td></tr>
+
+                            <tr style="height: 30px;">
+                                <th>International Conference Reviewer (国际会议审稿人):</th>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>IEEE International Symposium on Biomedical Imaging (ISBI)</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)</li></ul></td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td><ul><li>IEEE Engineering in Medicine and Biology Conference (EMBC)</li></ul></td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </dic>
+    </div>
+
+    <script type="text/javascript" src="common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
+    <Script>
+        $('.moreclick').unbind().on('click',function(){
+            $(this).hide();
+            $('.more').show();
+            $('.morehide').show();
+        })
+        $('.morehide').unbind().on('click',function(){
+            $(this).hide();
+            $(".moreclick").show();
+            $('.more').hide();
+        })
+        $('.navbar-nav li').unbind().on('click',function(){
+            if($(this).hasClass("active")){
+                console.log(1)
+            }else{
+                $(this).addClass("active");
+                $(this).siblings().removeClass('active');
+            }
+        })
+
+
+
+        function showPapers(year) {
+            // 获取所有论文列表和标签
+            var paperLists = document.querySelectorAll('.paper-list');
+            var tabs = document.querySelectorAll('.tab');
+            
+            // 隐藏所有论文列表
+            paperLists.forEach(function(list) {
+                list.classList.remove('active');
+            });
+
+            // 移除所有标签的激活状态
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            // 显示选择的年份的论文列表
+            document.getElementById(year).classList.add('active');
+
+            // 设置当前标签为激活状态
+            document.querySelector('.tab[onclick="showPapers(\'' + year + '\')"]').classList.add('active');
+        }
+
+        function showRecentPapers(year) {
+            var currentYear = year;
+            // var lastYear = currentYear - 1;
+            
+            // 显示当前年论文列表
+            document.getElementById(currentYear).classList.add('active');
+            // document.getElementById(lastYear).classList.add('active');
+
+            // 激活当前年标签
+            document.querySelector('.tab[onclick="showPapers(\'' + currentYear + '\')"]').classList.add('active');
+            // document.querySelector('.tab[onclick="showPapers(\'' + lastYear + '\')"]').classList.add('active');
+        }
+
+        // 默认显示最近一年的论文
+        showRecentPapers(2025);
+
+
+
+
+        // 显示前5条新闻
+        document.addEventListener("DOMContentLoaded", function() {
+            var newsItems = document.querySelectorAll('.news-item');
+            for (var i = 0; i < 6; i++) {
+                if (newsItems[i]) {
+                    newsItems[i].style.display = 'list-item';
+                }
+            }
+        });
+
+
+        document.getElementById('show-less').style.display = 'none'; // 隐藏Show Less按钮
+        // Show More功能
+        function showMoreNews() {
+            var newsItems = document.querySelectorAll('.news-item');
+            newsItems.forEach(function(item) {
+                item.style.display = 'list-item'; // 显示所有新闻
+            });
+            document.getElementById('show-more').style.display = 'none'; // 隐藏Show More按钮
+            document.getElementById('show-less').style.display = 'inline-block'; // 显示Show Less按钮
+        }
+
+        // Show Less功能
+        function showLessNews() {
+            var newsItems = document.querySelectorAll('.news-item');
+            for (var i = 0; i < newsItems.length; i++) {
+                if (i < 6) {
+                    newsItems[i].style.display = 'list-item'; // 显示前5条新闻
+                } else {
+                    newsItems[i].style.display = 'none'; // 隐藏其他新闻
+                }
+            }
+            document.getElementById('show-more').style.display = 'inline-block'; // 显示Show More按钮
+            document.getElementById('show-less').style.display = 'none'; // 隐藏Show Less按钮
+        }
+
+
+
+        function copyTextAndNotify(event, text) {
+            event.preventDefault();
+
+            // 创建一个临时的textarea元素
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // 对于移动设备
+
+            // 执行复制操作
+            document.execCommand("copy");
+
+            // 移除临时元素
+            document.body.removeChild(textarea);
+
+            // 显示提示信息
+            var notification = document.getElementById("notification");
+            notification.style.display = "block";
+
+            // 3秒后隐藏提示信息
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 3000);
+        }
+    </Script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

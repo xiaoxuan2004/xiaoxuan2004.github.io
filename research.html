@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="keywords" content="Open Vision, Open View, Open Venture" />
+    <title>实验室</title>
+    <link rel="stylesheet" href="common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="common/css/index.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+
+        .slider {
+            display: flex;
+            gap: 10px; /* 图片之间的间距 */
+            position: relative;
+            animation: scroll 30s linear 2s infinite running; /* 调整滚动速度 */
+        }
+
+        .slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slider img {
+            max-height: 200px;
+            /* width: 300px;
+            height: 200px; */
+            border-radius: 10px; /* 图片的圆角 */
+            flex-shrink: 0;
+        }
+
+        .slide-number {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-155.5%); }
+        }
+
+    </style>
+</head>
+<body >
+
+
+<!-- Copyright � 2008. Spidersoft Ltd -->
+<style>
+A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
+A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:#2F5BFF;background:transparent;text-decoration:none}
+A.info          {color:#ba0000;background:transparent;text-decoration:none}
+A.info:hover    {color:green;background:transparent;text-decoration:underline}
+/* 新闻标签样式 */
+.news-item {
+            display: none; /* 默认隐藏所有新闻 */
+        }
+        .show-more {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .show-less {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-top: 20px;
+            display: inline-block;
+        }
+</style>
+
+<!-- /Copyright � 2008. Spidersoft Ltd -->
+
+
+    <div class="container-fluid" style="padding:0 10%;">
+        <dic class="row">
+            <div class="col-md-2 col-xs-2 col-sm-2 " >
+                <div class="warpper" >
+                    <div class="logo" >
+                    </div>
+                    <ul class="nav nav-pills nav-stacked " >
+                        <li role="presentation" ><a href="index.html">HOMEPAGE</a></li>
+                        <li role="presentation" class="active"><a href="research.html">LAB HOMEPAGE</a></li>
+                        <!--<li role="presentation"><a href="https://qiweili00.github.io/homepage/reaserchCN.html">中文版本</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-10 mb20">
+                <nav class="navbar navbar-default ">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                          <span class="sr-only">Toggle navigation</span>
+                        </button>
+                      </div>
+                    <div class="container-fluid " style="padding: 0 ;">
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                        <ul class="nav navbar-nav">
+                          <li class="active"><a href="#introduction">Lab Introduction</a></li>
+                          <li><a href="#news">Latest News</a></li>
+                          <li><a href="#member">Lab Members</a></li>
+                          <li><a href="#Lives">Lab Lives</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </nav>
+                <div>
+                    <p id="introduction" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section style="font-size: 1.8rem;">
+                        <!-- <div >
+                            <h3>Lab Introduction</h3>
+                            <p style="font-size:16px;font-weight: 600;margin-top: 40px;text-indent: 3.6rem;"> Open Vision, Open View, Open Venture</p>
+
+                        
+                        </div> -->
+                        <!-- <div>
+                        <h3>The Advanced Nuclear Medicine and Molecular Imaging Laboratory</h3>
+                        <p style="text-align:center;"><img src="common/img/direction.png" style="height: 240px; width: auto;"></p>
+                        <p style="font-size:16px;">临床需求为主导，技术创新为驱动</p>
+                        <p style="font-size:16px;">机制→探测→解析→应用</p>
+                        </div> -->
+                        <div style="text-align:center;">
+                            <h3>The Advanced Nuclear Medicine and Molecular Imaging Laboratory</h3>
+                            <p><img src="common/img/direction.png" style="height: 240px; width: auto;"></p>
+                            <p style="font-size:16px;">临床需求为主导，技术创新为驱动</p>
+                            <p style="font-size:16px;">机制→探测→解析→应用</p>
+                        </div>
+                    </section>
+                    <p id="news" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section style="font-size: 1.8rem;">
+                        <h3>Latest News</h3>
+                         <ul>
+                            <li class="news-item"><p style="color:red;">
+                                For recruitment information, please see:  <a href="https://wiki.milab.wiki/">https://wiki.milab.wiki/</a>
+                            </p></li>
+                            <li class="news-item"><p>07.2025, Our paper on a universal model for medical imaging segmentation has been accepted by Nature Communications.</p>
+                            </li>
+                            <li class="news-item"><p>06.2025, Our paper on multiorgan metabolic dysregulation in Alzheimer's disease has been accepted by the EANM'25 conference.</p>
+                            </li>
+                            <li class="news-item"><p>06.2025, One paper on multi-GPU total-body PET image reconstruction was accepted for the Fully 3D'25 conference(Oral Presentation).</p>
+                            </li>
+                            <li class="news-item"><p>06.2025, Our paper on activation functions was accepted by Neural Networks.</p>
+                            </li>
+                            <li class="news-item"><p>03.2025, One paper on brain interstitial fluid imaging was accepted by Sensing and Imaging.</p>
+                            </li>
+                            <li class="news-item"><p>10.2024, One paper on low-dose universal-tissue CT image domain adaptation for medical segmentationwas was accepted by MICCAI'24.</p>
+                            </li>
+                            <li class="news-item"><p>08.2024, One paper on lightweight MRI brain tumor segmentation with missing modalities was accepted by Expert Systems with Applications.</p>
+                            </li>
+                            <li class="news-item"><p>07.2024, One paper on a novel graphical plot in dynamic PET imaging was accepted by Physics in Medicine & Biology.</p>
+                            </li>
+                            <li class="news-item"><p>06.2024, One paper on uncertainty evaluation in dynamic PET imaging was accepted by Journal of Nuclear Medicine.</p>
+                            </li>
+                            <li class="news-item"><p>05.2024, One paper on suppressing label noise in medical image classification was accepted by Physics in Medicine & Biology.</p>
+                            </li>
+                            <li class="news-item"><p>04.2024, One paper on a prior category network (PCNet) for CT universal segmentation was accepted by IEEE Transactions on Medical Imaging.</p>
+                            </li>
+                            <li class="news-item"><p>04.2024, One paper on structure-enhanced unsupervised domain adaptation for CT whole-brain segmentation was accepted by IEEE Transactions on Radiation and Plasma Medical Sciences.</p>
+                            </li>
+                            <!-- <li class="news-item"><p>03.2024, Our patent on a PET image reconstruction method was granted (CN117648195B).</p>
+                            </li> -->
+                            <!-- <li class="news-item"><p>01.2024, Our patent on a data processing system and method was filed (CN202410191474.2).</p>
+                            </li> -->
+                            <li class="news-item"><p>11.2023, Invited to give a talk at the Total-body PET Workshop of IEEE NSS/MIC'23.</p>
+                            </li>
+                            <li class="news-item"><p>11.2023, Our paper on the optimization of coincidence sorting protocol for total-body PET was accepted by the IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC).</p>
+                            </li>  
+                            <li class="news-item"><p>06.2023, One paper on fast and robust estimation of kinetic parameters in dynamic PET imaging was accepted by Journal of Nuclear Medicine.</p>
+                            </li>
+
+                            <li class="news-item"><p>06.2022, Our paper on a hybrid imaging platform for evaluating tumor necrosis was accepted by Frontiers in Oncology.</p>
+                            </li>
+                        </ul>
+                        <div id="show-more" class="show-more" onclick="showMoreNews()">Show More</div>
+                        <div id="show-less" class="show-less" onclick="showLessNews()">Show Less</div>
+                    </section>
+
+
+                    <p id="member" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section>
+                        <h3>Lab Members</h3>
+                        <div class="perpic">
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Faculty: </p>
+                            <div class="part1">
+                                <div class="w18">
+                                    <img src="common/img/bio-xzh-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Jiahuan Zhou</p>
+                                        <p>(谢肇恒)</p>
+                                        <p><a href="index.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Jiahuan Zhou</p>
+                                </div>
+                                
+                                
+                            </div>
+
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">PhD: </p>
+                            <div class="part1">
+                                <div class="w18">
+                                    <img src="common/img/xkl-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Kunlun Xu</p>
+                                        <p>(徐昆仑)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2023 ~ Now</p>
+                                        <p><a href="student_pages/xklEN.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Kunlun Xu</p>
+                                </div>
+
+                                <!-- <div class="w18">
+                                    <img src="common/img/lqw-resized.jpg" > </a>
+                                    <div class="mark"> 
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Qiwei Li</p>
+                                        <p>(李其威)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2024 ~ Now</p> 
+                                        <p><a href="student_pages/lqwEN.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Qiwei Li</p> 
+                                </div> -->
+
+                                <div class="w18">
+                                    <img src="common/img/ljj-resized.jpg" > </a>
+                                    <div class="mark"> 
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Junjie Liang</p>
+                                        <p>(梁俊杰)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2024 ~ Now</p> 
+                                        <p><a href="student_pages/ljjEN.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Junjie Liang</p> 
+                                </div>
+                                
+                                <div class="w18">
+                                    <img src="common/img/azx-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">ZiXiang Ai</p>
+                                        <p>(艾子翔)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2025 ~ Now</p>
+                                        <p><a href="student_pages/azxEN.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Zixiang Ai</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/zyq-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yanqin Zhang</p>
+                                        <p>(张彦钦)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2026 ~ Now</p>
+                                    </div>
+                                    <p>Yanqin Zhang</p>
+                                </div>
+                                
+                            </div>
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Master:</p>
+                            <div class="part1">
+                                
+                                <div class="w18">
+                                    <img src="common/img/lzc-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Zichen Liu</p>
+                                        <p>(刘子宸)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master</p>
+                                        <p>2022 ~ 2025</p>
+                                        <p><a href="student_pages/lzcEN.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Zichen Liu</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/zk-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Kai Zhu</p>
+                                        <p>(祝凯)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master</p>
+                                        <p>2026 ~ Now</p>
+                                        <p><a href="student_pages/zkEN.html">HOMEPAGE</a></p>
+                                    </div>
+                                    <p>Kai Zhu</p>
+                                </div>
+                                
+                            </div>
+
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Intern:</p>
+                            <div class="part1">
+                                
+                                <div class="w18">
+                                    <img src="common/img/wyj-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yanjie Wang</p>
+                                        <p>(王岩杰)</p>
+                                    </div>
+                                    <p>Yanjie Wang</p>
+                                </div>
+                                
+                                <div class="w18">
+                                    <img src="common/img/zc-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Chao Zhu</p>
+                                        <p>(祝超)</p>
+                                    </div>
+                                    <p>Chao Zhu</p>
+                                </div>
+                            
+                                <div class="w18">
+                                    <img src="common/img/fyb-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yibo Feng</p>
+                                        <p>(冯诣博)</p>
+                                    </div>
+                                    <p>Yibo Feng</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/lc-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Chen Li</p>
+                                        <p>(李宸)</p>
+                                    </div>
+                                    <p>Chen Li</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/lys-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yanshu Li</p>
+                                        <p>(李彦澍)</p>
+                                    </div>
+                                    <p>Yanshu Li</p>
+                                </div>
+                                
+                                <div class="w18">
+                                    <img src="common/img/cht-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Haotong Cheng</p>
+                                        <p>(程浩桐)</p>
+                                    </div>
+                                    <p>Haotong Cheng</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/zty-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Xinyue Zhang</p>
+                                        <p>(张镡月)</p>
+                                    </div>
+                                    <p>Xinyue Zhang</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/mly-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Liangyu Ma</p>
+                                        <p>(马梁育)</p>
+                                    </div>
+                                    <p>Liangyu Ma</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/yy-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yong Yao</p>
+                                        <p>(姚勇)</p>
+                                    </div>
+                                    <p>Yong Yao</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/lzq-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Zhiqiang Lu</p>
+                                        <p>(卢志强)</p>
+                                    </div>
+                                    <p>Zhiqiang Lu</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/lqy-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Quanyou Lao</p>
+                                        <p>(劳铨佑)</p>
+                                    </div>
+                                    <p>Quanyou Lao</p>
+                                </div>
+                            </div>
+
+                            
+                        <!-- </div class="perpic"> -->
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Alumni:</p>
+                            <!-- <p>Chenhao Zhou, Undergrad Student,pku, 2024.1-2024.6, Research Intern</p>
+                            <p>Yu Li, Undergrad Student,武大 2024.3-2024.5, Research Intern</p>
+                            <p>Tianxing Fan, Undergrad Student,pku, 2023.11-2024.5, Research Intern</p>
+                            <p>Yisong Wang, Undergrad Student,pku, 2023.11-2024.5, Research Intern</p>
+                            <p>Haozhuo Zhang, Undergrad Student,pku, 2023.10-2024.5, Research Intern</p>
+                            <p>Xinyue Zhang, PhD in HUST,  2023.5-2024.5, Research Intern</p>
+                            <p>Shilv Cai, PhD in HUST,  2023.5-2024.5, Research Intern</p>
+                            <p>Jingyu Lu, Undergrad Student, pku, 2024.3-2024.5, Research Intern</p>
+                            <p>Liqin Luo, Undergrad Student, pku, 2024.3-2024.5, Research Intern</p>
+                            <p>Yaoxiang Xiong, Undergrad Student, pku, 2023.10-2024.3, Research Intern</p>
+                            <p>Haonan Xue, Undergrad Student, pku, 2023.10-2024.2, Research Intern</p>
+                            <p>Hongrui Li, Undergrad Student, pku, 2023.10-2024.2, Research Intern</p>
+                            <p>Yifan Wang, Undergrad Student, pku, 2022-2023, University of Southern California</p> -->
+
+                            <table style="width:100%; font-size:15px; border: 0;">
+                                <!-- <tr style="height: 30px;">
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                    <th>University</th>
+                                    <th>Period</th>
+                                </tr> -->
+                                
+                <tr style="height: 30px;">
+                                    <td>Jihao Huang</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2025.02 - 2025.05</td>
+                                </tr>  
+                <tr style="height: 30px;">
+                                    <td>Qiran Li</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2024.11 - 2025.05</td>
+                                </tr>  
+                <tr style="height: 30px;">
+                                    <td>Xiaochen Yang</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Harbin Institute of Technology</td>
+                                    <td>2024.09 - 2025.05</td>
+                                </tr>
+                <tr style="height: 30px;">
+                                    <td>Chenyu Zhang</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2024.01 - 2025.05</td>
+                                </tr>
+                <tr style="height: 30px;">
+                                    <td>Haozhi Lan</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Xi'an Jiaotong University</td>
+                                    <td>2024.10 - 2025.04</td>
+                                </tr>
+                <tr style="height: 30px;">
+                                    <td>Fan Zhuo</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Xidian University</td>
+                                    <td>2024.07 - 2025.04</td>
+                                </tr>
+				<tr style="height: 30px;">
+                                    <td>Yuchao Jin</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2024.09 - 2024.10</td>
+                                </tr>
+				<tr style="height: 30px;">
+                                    <td>Yueyi Sun</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Beijing Institute of Technology</td>
+                                    <td>2024.07 - 2024.10</td>
+                                </tr>
+				<tr style="height: 30px;">
+                                    <td>Tianze Li</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Imperial College London</td>
+                                    <td>2024.07 - 2024.10</td>
+                                </tr>
+				<tr style="height: 30px;">
+                                    <td>Yuanpeng He</td>
+                                    <td>Ph.D.</td>
+                                    <td>Peking University</td>
+                                    <td>2024.07 - 2024.09</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Chenhao Zhou</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2024.01 - 2024.06</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Yu Li</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Wuhan University</td>
+                                    <td>2024.03 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Tianxing Fan</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2023.11 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Yisong Wang</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2023.11 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Haozhuo Zhang</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2023.10 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Xinyue Zhang</td>
+                                    <td>Ph.D.</td>
+                                    <td>HUST</td>
+                                    <td>2023.05 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Shilv Cai</td>
+                                    <td>Ph.D.</td>
+                                    <td>HUST</td>
+                                    <td>2023.05 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Jingyu Lu</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2024.03 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Liqin Luo</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2024.03 - 2024.05</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Yaoxiang Xiong</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2023.10 - 2024.03</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Haonan Xue</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2023.10 - 2024.02</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Hongrui Li</td>
+                                    <td>Undergrad Student</td>
+                                    <td>Peking University</td>
+                                    <td>2023.10 - 2024.02</td>
+                                </tr>
+                                <tr style="height: 30px;">
+                                    <td>Yifan Wang</td>
+                                    <td>Undergrad Student</td>
+                                    <td>University of Southern California</td>
+                                    <td>2022.11 - 2023.05</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+
+
+                        </div class="perpic">
+
+                    </section>
+                    
+                    <p id="Lives" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section>
+                        <h3 style="margin-top: 20px;">Lab Lives</h3>
+                        <div class="slider-container">
+                            <div class="slider">
+                                <div class="slide">
+                                    <img src="common/img/group3-resized.jpg" alt="图片3">
+                                    <div class="slide-number">2023年5月香山徒步活动</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group1-resized.jpg" alt="图片1">
+                                    <div class="slide-number">2024年1月聚餐活动</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group2-resized.jpg" alt="图片2">
+                                    <div class="slide-number">2024年2月新年聚餐</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group4-resized.jpg" alt="图片4">
+                                    <div class="slide-number">2024年4月聚餐活动</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group5-resized.jpg" alt="图片5">
+                                    <div class="slide-number">2024年6月CVPR24线下参会</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group6-resized.jpg" alt="图片6">
+                                    <div class="slide-number">2024年7月迎新聚餐</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group7-resized.jpg" alt="图片7">
+                                    <div class="slide-number">2025年1月新年聚餐</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group8-resized.jpg" alt="图片7">
+                                    <div class="slide-number">2025年3月共同观影《哪吒2》</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/china-3dv-2025-resized.jpg" alt="图8">
+                                    <div class="slide-number">2025年4月参加China 3DV会议</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group9-resized.jpg" alt="图9">
+                                    <div class="slide-number">2025年5月庆祝子宸通过硕士答辩</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/Valse-2025-resized.jpg" alt="图10">
+                                    <div class="slide-number">2025年6月参加VALSE研讨会</div>
+                                </div>
+                                <!-----------------------------Repeat------------------------------>
+                                <div class="slide">
+                                    <img src="common/img/group3-resized.jpg" alt="图片3">
+                                    <div class="slide-number">2023年5月香山徒步活动</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group1-resized.jpg" alt="图片1">
+                                    <div class="slide-number">2024年1月聚餐活动</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group2-resized.jpg" alt="图片2">
+                                    <div class="slide-number">2024年2月新年聚餐</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group4-resized.jpg" alt="图片4">
+                                    <div class="slide-number">2024年4月聚餐活动</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group5-resized.jpg" alt="图片5">
+                                    <div class="slide-number">2024年6月CVPR24线下参会</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group6-resized.jpg" alt="图片6">
+                                    <div class="slide-number">2024年7月迎新聚餐</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group7-resized.jpg" alt="图片7">
+                                    <div class="slide-number">2025年1月新年聚餐</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group8-resized.jpg" alt="图片7">
+                                    <div class="slide-number">2025年3月共同观影《哪吒2》</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/china-3dv-2025-resized.jpg" alt="图8">
+                                    <div class="slide-number">2025年4月参加China 3DV会议</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/group9-resized.jpg" alt="图9">
+                                    <div class="slide-number">2025年5月庆祝子宸通过硕士答辩</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="common/img/Valse-2025-resized.jpg" alt="图10">
+                                    <div class="slide-number">2025年6月参加VALSE研讨会</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+
+                    </div>
+                </div>
+        </dic>
+    </div>
+
+    <script type="text/javascript" src="common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
+    <script>
+        $('.navbar-nav li').unbind().on('click',function(){
+            if($(this).hasClass("active")){
+                console.log(1)
+            }else{
+                $(this).addClass("active");
+                $(this).siblings().removeClass('active');
+            }
+        })
+
+        // 显示前5条新闻
+        document.addEventListener("DOMContentLoaded", function() {
+            var newsItems = document.querySelectorAll('.news-item');
+            for (var i = 0; i < 6; i++) {
+                if (newsItems[i]) {
+                    newsItems[i].style.display = 'list-item';
+                }
+            }
+        });
+        
+        document.getElementById('show-less').style.display = 'none'; // 隐藏Show Less按钮
+        // Show More功能
+        function showMoreNews() {
+            var newsItems = document.querySelectorAll('.news-item');
+            newsItems.forEach(function(item) {
+                item.style.display = 'list-item'; // 显示所有新闻
+            });
+            document.getElementById('show-more').style.display = 'none'; // 隐藏Show More按钮
+            document.getElementById('show-less').style.display = 'inline-block'; // 显示Show Less按钮
+        }
+
+        // Show Less功能
+        function showLessNews() {
+            var newsItems = document.querySelectorAll('.news-item');
+            for (var i = 0; i < newsItems.length; i++) {
+                if (i < 6) {
+                    newsItems[i].style.display = 'list-item'; // 显示前5条新闻
+                } else {
+                    newsItems[i].style.display = 'none'; // 隐藏其他新闻
+                }
+            }
+            document.getElementById('show-more').style.display = 'inline-block'; // 显示Show More按钮
+            document.getElementById('show-less').style.display = 'none'; // 隐藏Show Less按钮
+        }
+
+        // 滚动
+        const slider = document.getElementById('slider');
+        let sliderWidth = slider.scrollWidth;
+        let containerWidth = document.querySelector('.slider-container').offsetWidth;
+        let currentPosition = 0;
+
+        function startSlider() {
+            currentPosition -= 1; // 控制滚动速度
+
+            if (Math.abs(currentPosition) >= sliderWidth / 2) {
+                currentPosition = 0; // 当滚动到一半时重置
+            }
+
+            slider.style.left = currentPosition + 'px';
+
+            requestAnimationFrame(startSlider);
+        }
+
+        // 复制图片以实现无缝滚动
+        function cloneImages() {
+            let images = slider.querySelectorAll('img');
+            images.forEach(img => {
+                let clone = img.cloneNode(true);
+                slider.appendChild(clone);
+            });
+            sliderWidth = slider.scrollWidth; // 更新slider的宽度
+        }
+
+        cloneImages();
+        startSlider();
+    </script>
+</body>
+</html>
