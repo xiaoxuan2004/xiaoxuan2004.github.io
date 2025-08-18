@@ -34,11 +34,11 @@ body{
     background:#bc0000;
     left: 10%;
     top: 0;
-    width: 12%;
+    width: 13.5%;
 }
 .logo{
     background: url('../img/logo4.png') no-repeat center;
-    background-size: 20rem 22.4rem ;
+    background-size: 20rem 14.46rem ;
     height: 300px;
 }
 #respro p{
@@ -98,6 +98,12 @@ section{
     text-align: center;
     position: relative;
     margin-top: 20px;
+}
+/* add:添加针对图片的样式 (推荐使用方案二) */
+.w18 img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover; /* 让所有图片都以相同的方式填满容器 */
 }
 .mark {
     display: none;
@@ -281,12 +287,12 @@ section{
 }
 
 /* 整个研究板块的主标题 */
-.research-section h3 {
+/* .research-section h3 {
     text-align: center;
     font-size: 2.5rem; 
     margin-bottom: 50px; 
     font-weight: 700;
-}
+} */
 
 /* 卡片标题 - 字体已加大 */
 .research-box h4 {
@@ -315,3 +321,5 @@ section{
         padding: 0; /* 移除侧边距 */
     }
 }
+
+
