@@ -323,3 +323,15 @@ section{
 }
 
 
+.lab-overview {
+    text-align: center; /* Center the image */
+    margin-bottom: 40px; /* Space below the image */
+}
+
+.lab-overview img {
+    max-width: 50%; /* Ensure image is responsive */
+    height: auto;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
