@@ -131,6 +131,53 @@
             text-align: left;
             border-radius: 5px;
         }
+
+        /* 合并research.html的css */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+
+        .slider {
+            display: flex;
+            gap: 10px; /* 图片之间的间距 */
+            position: relative;
+            animation: scroll 30s linear 2s infinite running; /* 调整滚动速度 */
+        }
+
+        .slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slider img {
+            max-height: 200px;
+            /* width: 300px;
+            height: 200px; */
+            border-radius: 10px; /* 图片的圆角 */
+            flex-shrink: 0;
+        }
+
+        .slide-number {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-155.5%); }
+        }
     </style>
 </head>
 
@@ -146,22 +193,23 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 </style>
 
 
-    <div class="container-fluid" style="padding:0 10%;">
+    <!-- <div class="container-fluid" style="padding:0 10%;"> -->
+    <div class="container-fluid" style="padding:0 5%;">
         <dic class="row">
-            <!-- <div class="col-md-3 col-xs-3 col-sm-3 navbar-fixed-left" > -->
-            <div class="col-md-2 col-xs-2 col-sm-2 navbar-fixed-left" >
+            <!-- 去掉侧栏 -->
+            <!-- <div class="col-md-2 col-xs-2 col-sm-2 navbar-fixed-left" >
                 <div class="warpper" >
                     <div class="logo" >
                     </div>
                     <ul class="nav nav-pills nav-stacked " >
                         <li role="presentation" class="active" ><a href="index.html">HOMEPAGE</a></li>
                         <li role="presentation"><a href="research.html">LAB HOMEPAGE</a></li>
-                        <!-- <li role="presentation"><a href="https://qiweili00.github.io/homepage/indexCN.html">中文版本</a></li> -->
+                       
                     </ul>
                 </div>
-            </div>
-            <!-- <div class="col-md-9 col-xs-9 col-sm-9 mb20" > -->
-            <div class="col-md-10 col-xs-10 col-sm-10 mb20" >
+            </div> -->
+            <!-- <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 mb20" > -->
+            <div class="col-md-12 col-xs-12 col-sm-12 mb20" >
                 <nav class="navbar navbar-default ">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -171,36 +219,32 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                     <div class="container-fluid " style="padding: 0 ;">
                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                           <ul class="nav navbar-nav">
-                              <li class="active"><a href="#personal">About Me</a></li>
-                              <li><a href="#news">News</a></li>
-                              <li><a href="#direct">Research Interests</a></li>
-                              <li><a href="#paper">Publications</a></li>
-                              <li><a href="#services">Academic Service</a></li>
+                                <!-- <li class="active"><a href="#personal">About Me</a></li>  -->
+                                <li class="active"><a href="#introduction">Lab Intro</a></li>
+                                <li><a href="#news">News</a></li>
+                                <li><a href="#direct">Research Interests</a></li>
+                                <li><a href="#member">Lab Members</a></li>
+                                <li><a href="#paper">Publications</a></li>
+                                <li><a href="#services">Academic Service</a></li>
+                                <li><a href="#teaching">Teaching</a></li>
+                                <li><a href="#Lives">Lab Lives</a></li>
                           </ul>
                       </div>
                     </div>
                 </nav>
+                
                 <div class="content">
-                    <p id="personal" style="height:4rem;margin: 0;">&nbsp;</p>
-                    <!-- <section>
-                        <div class="my-auto" style="font-size: large;">
-                            <p align="center">
-                                <img height="240" src="common/img/bio-xzh-resized.jpg" alt="Xie Zhaoheng" hspace="9" width="180" align="right" border="0" />
-                            </p>
-                            <h3 class="mb-0">Xie, Zhaoheng（谢肇恒）</h3>
-                            </br>
-                            <p>Tenure-track Assistant Professor and Researcher, Institute of Medical Technology, Peking University Health Science Center </p>
-                            <p>Ph.D. Supervisor</p>
-                            <p>Peking University Health Science Center </p>
-                            <p>Beijing, China </p>
-                            <p>E-mail: <a href="mailto:xiezhaoheng@pku.edu.cn">xiezhaoheng@pku.edu.cn</a> </p>
+                    <p id="introduction" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section style="font-size: 1.8rem;">
+                        <!-- <h3>Lab Introduction</h3> -->
+                        <div style="text-align:center;">
+                            <h3 class="lab-title">The Advanced Nuclear Medicine and Molecular Imaging Laboratory</h3>
                             <br>
-                            <p align="justify" style="line-height: 30px;text-indent: 3.6rem;">
-                                I am currently an Assistant Professor and Ph.D. Supervisor at the Institute of Medical Technology, Peking University Health Science Center. I received my Bachelor's degree from Xi'an Jiaotong University and Ph.D. from Peking University. I served as a Postdoctoral Researcher at UC Davis. My research focuses on the development and application of molecular medical imaging equipment, specializing in numerical simulation and system optimization of PET/CT and PET/MRI, physical correction and image reconstruction, pharmacokinetic modeling, and AI-based medical imaging diagnostics. As a key researcher, I have participated in pioneering projects including the small animal quad-modality molecular imaging system, the world's first Total-body PET imaging system (EXPLORER), and the dedicated brain PET imaging system (NeuroEXPLORE) for the U.S. BRAIN Initiative research. I have authored 17 publications in high-impact SCI journals (e.g., MedPhy, PMB, PNAS, JNM) and 10 conference papers, with 8 patents granted (including 2 U.S. patents). I have received multiple international awards such as SNMMI Young Investigator (Best Young Scholar) and Henry N. Wagner Best Paper Award (as co-author). My research has been featured by prestigious academic media outlets including Science AAAS, Nature News, and NIH.
-                            </p>
-                            
+                             <p><img src="common/img/bg.png" style="height: 400px; width: auto;"></p>
+
                         </div>
-                    </section> -->
+                    </section>
+                    <p id="personal" style="height:4rem;margin: 0;">&nbsp;</p>
                     <section>
                     <div class="my-auto" style="font-size: large;">
                         <p align="center">
@@ -214,8 +258,6 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                             <br>
                             <strong>Courtesy Appointment:</strong>The National Biomedical Imaging Center (NIBC), College of Future Technology, Peking University<br>
                             <br>
-                            <!-- <strong>Assistant Director</strong><br>
-                            NMPA Key Laboratory for Medical Imaging<br> -->
                         </p>
                         <p>Email: <a href="mailto:xiezhaoheng@pku.edu.cn">xiezhaoheng@pku.edu.cn</a></p>
                         
@@ -236,7 +278,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                             <li>SNMMI Henry N. Wagner Best Paper Award, 2019</li>
                         </ul>
                     </div>
-                </section>
+                    </section>
 
                     <p id="news" style="height:4rem;margin: 0;">&nbsp;</p>
                     <section style="font-size: 1.8rem;">
@@ -245,6 +287,8 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                             <li class="news-item"><p style="color:red;">
                                 For recruitment information, please see:  <a href="https://wiki.milab.wiki/">https://wiki.milab.wiki/</a>
                             </p></li>
+                            <li class="news-item"><p>September 2025 – Our paper on an unsupervised neural network approach for dual-time-window PET acquisition in the Patlak plot has been accepted by EJNMMI Physics.</p>
+                            </li>
                             <li class="news-item"><p>July 2025 – Our paper on a Modality-projection universal model for comprehensive full-body medical imaging segmentation has been accepted by Nature Communications.</p>
                             </li>
                             <li class="news-item"><p>June 2025 – Our study on multiorgan metabolic dysregulation in Alzheimer's disease has been accepted for presentation at European Association of Nuclear Medicine Congress 2025 (The largest international meeting in nuclear medicine).</p>
@@ -283,73 +327,12 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                             <li class="news-item"><p>06.2022, Our paper on a hybrid imaging platform for evaluating tumor necrosis was accepted by Frontiers in Oncology.</p>
                             </li> -->
                         </ul>
-                </section>
+                    </section>
                         <div id="show-more" class="show-more" onclick="showMoreNews()">Show More</div>
                         <div id="show-less" class="show-less" onclick="showLessNews()">Show Less</div>
-                    </section>
                     <p id="direct" style="height:4rem;margin: 0;">&nbsp;</p>
-                    <!-- <section style="font-size: 1.7rem;">
-                        <h3>Research Interests</h3>
-                        <div class="box-container">
-                            <div class="box">
-                                <div class="circle-box" style="background-color: rgb(0, 0, 0);"></div><b>Open-Environment Computer Vision</b><br>
-                                <div class="number-box" style="background-color: rgb(255, 0, 0);"></div>Object Re-Identification<br>
-                                <div class="number-box" style="background-color: rgb(255, 80, 80);"></div>Fine-grained Recogniiton<br>
-                                <div class="number-box" style="background-color: rgb(255, 150, 150);"></div>Object Detection<br>
-                                <div class="number-box" style="background-color: rgb(255, 224, 224);"></div>AIGC
-                            </div>
-                            <div class="box"><div class="circle-box" style="background-color: rgb(0, 0, 0);"></div><b>Efficient Learning from Limited Data</b><br>
-                                <div class="number-box" style="background-color: rgb(0, 0, 255);"></div>Zero/Few-shot Learning<br>
-                                <div class="number-box" style="background-color: rgb(50, 50, 255);"></div>Incremental Learning<br>
-                                <div class="number-box" style="background-color: rgb(100, 100, 255);"></div>Prompt Learning<br>
-                                <div class="number-box" style="background-color: rgb(150, 150, 255);"></div>Online Learning<br>
-                                <div class="number-box" style="background-color: rgb(200, 200, 255);"></div>Noisy Learning
-                            </div>
-                            <div class="box"><div class="circle-box" style="background-color: rgb(0, 0, 0);"></div><b>Multi-Modal Learning</b><br>
-                            <div class="number-box" style="background-color: rgb(100, 50, 0);"></div>Visual-Language<br>
-                            <div class="number-box" style="background-color: rgb(150, 100, 0);"></div>2D to 3D<br>
-                            <div class="number-box" style="background-color: rgb(200, 150, 0);"></div>Visible to Thermal<br>
-                            <div class="number-box" style="background-color: rgb(250, 200, 0);"></div>Sketch to Photo
-                            </div>
-                        </div>
-                       
-                    </section> -->
-                    <!-- <section class="research-section">
-                    <h3>Research Interests</h3>
-                    <div class="research-container">
-                        <div class="research-box">
-                            <div class="icon">💻</div>
-                            <h4>
-                                <b>AI驱动的精准成像</b>
-                            </h4>
-                            <div class="keywords">
-                                通用影像分割 · 智能重建算法<br>
-                                跨模态域自适应 · 生成式模型
-                            </div>
-                        </div>
-                        <div class="research-box">
-                            <div class="icon">☢️</div>
-                            <h4>
-                                <b>前沿核医学物理</b>
-                            </h4>
-                            <div class="keywords">
-                                全身PET技术 · 多模态系统<br>
-                                蒙特卡洛模拟 · 物理校正
-                            </div>
-                        </div>
-                        <div class="research-box">
-                            <div class="icon">📈</div>
-                            <h4>
-                                <b>定量分子影像与转化</b>
-                            </h4>
-                            <div class="keywords">
-                                动态参数成像 · 快速动力学建模<br>
-                                肿瘤与神经应用 · 临床转化研究
-                            </div>
-                        </div>
-                    </div>
-                </section> -->
-                <section class="research-section">
+                    
+                    <section class="research-section">
                     <h3>Research Interests</h3>
                     <div class="research-container">
                         <div class="research-box" data-aos="fade-up">
@@ -369,7 +352,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 
                         <div class="research-box" data-aos="fade-up" data-aos-delay="300">
                             <div class="research-image">
-                                <img src="common/img/interest_3.png" alt="动力学建模 & 参数成像">
+                                <img src="common/img/interest_3(new).png" alt="动力学建模 & 参数成像">
                             </div>
                             <h4>Kinetic modeling</h4>
                         </div>
@@ -386,12 +369,264 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                         <strong>advancing molecular imaging technologies</strong>
                     </p>
                     </section>
-                 
+
+                     <p id="member" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section>
+                        <h3>Lab Members</h3>
+                        <div class="perpic">
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Faculty: </p>
+                            <div class="part1">
+                                <div class="w18">
+                                    <img src="common/img/bio-xzh-resized.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Zhaoheng Xie</p>
+                                        <p>(谢肇恒)</p>
+                                        <p><a href="index.html">HOMEPAGE</a></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">PhD: </p>
+                            <div class="part1">
+                                <div class="w18">
+                                    <img src="common/img/tzf.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Kunlun Xu</p>
+                                        <p>(田子枫)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2019 ~ 2025</p>
+                                        <!-- <p><a href="student_pages/xklEN.html">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Zifeng Tian</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/wz.png" > </a>
+                                    <div class="mark"> 
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Zhao Wang</p>
+                                        <p>(王曌)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2023 ~ Now</p> 
+                                        <!-- <p><a href="student_pages/ljjEN.html">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Zhao Wang</p> 
+                                </div>
+                                
+                                <div class="w18">
+                                    <img src="common/img/cyx.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yixin Chen</p>
+                                        <p>(陈亦新)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2023 ~ Now</p>
+                                        <!-- <p><a href="student_pages/azxEN.html">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Yixin Chen</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/zx.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Xin Zhao</p>
+                                        <p>(赵鑫)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2024 ~ Now</p>
+                                    </div>
+                                    <p>Xin Zhao</p>
+                                </div>
+                                 <div class="w18">
+                                    <img src="common/img/dzk.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Zhengkun Dong</p>
+                                        <p>(董正坤)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2024 ~ Now</p>
+                                        <!-- <p><a href="#">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Zhengkun Dong</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/jwp.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Wenpei Jiao</p>
+                                        <p>(焦文沛)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2024 ~ Now</p>
+                                        <!-- <p><a href="student_pages/zkEN.html">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Wenpei Jiao</p>
+                                </div>
+
+                                 <div class="w18">
+                                    <img src="common/img/xry.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Ruoyan Xu</p>
+                                        <p>(徐若妍)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2025 ~ Now</p>
+                                        <!-- <p><a href="student_pages/zkEN.html">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Ruoyan Xu</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/xhw.jpg" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Haowei Xu</p>
+                                        <p>(徐皓玮)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">PhD</p>
+                                        <p>2025 ~ Now</p>
+                                    </div>
+                                    <p>Haowei Xu</p>
+                                </div>
+
+                            </div>
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Master:</p>
+                            <div class="part1">
+                                
+                                <div class="w18">
+                                    <img src="common/img/wy.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yang Wang</p>
+                                        <p>(汪洋)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master RA</p>
+                                        <p>2022 ~ Now</p>
+                                        <!-- <p><a href="student_pages/lzcEN.html">HOMEPAGE</a></p> -->
+                                    </div>
+                                    <p>Yang Wang</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/dzy.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Zhengyan Deng</p>
+                                        <p>(邓政言)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master</p>
+                                        <p>2023 ~ Now</p>
+                                    </div>
+                                    <p>Zhengyan Deng</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/swr.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Wenrui Shao</p>
+                                        <p>(邵闻睿)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master</p>
+                                        <p>2023 ~ Now</p>
+                                    </div>
+                                    <p>Wenrui Shao</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/mk.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Kun Ma</p>
+                                        <p>(马琨)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master</p>
+                                        <p>2024 ~ Now</p>
+                                    </div>
+                                    <p>Kun Ma</p>
+                                </div>
+
+                                <div class="w18">
+                                    <img src="common/img/wyy.png" />
+                                    <div class="mark">
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Yuyao Wang</p>
+                                        <p>(王语瑶)</p>
+                                        <p style="margin-top:8px;margin-bottom: 5px;">Master</p>
+                                        <p>2025 ~ Now</p>
+                                    </div>
+                                    <p>Yuyao Wang</p>
+                                </div>
+                                
+                            </div>
+                            
+                        <p style="font-size:18px;font-weight:600;margin-top: 20px;">Overview:</p>
+                         <div class="lab-overview">
+                            <img src="common/img/direction.png" alt="Lab Research Directions" />
+                        </div>
+                            
+                        <div class="perpic">
+                            <p style="font-size:18px;font-weight:600;margin-top: 20px;">Detailed information:</p>     
+                            <table style="width:100%; font-size:15px; border: 0;">
+                                    <tr style="height: 30px;">
+                                        <td>Wang Zhao (王曌)</td>
+                                        <td><a href="mailto:z.wang@stu.pku.edu.cn" style="color: #0066cc;">z.wang@stu.pku.edu.cn</a></td>
+                                        <td>全视场高时空分辨PET图像重建</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Dong Zhengkun (董正坤)</td>
+                                        <td><a href="mailto:dongzhengkun@stu.pku.edu.cn" style="color: #0066cc;">dongzhengkun@stu.pku.edu.cn</a></td>
+                                        <td>面向诊疗一体化的个体化剂量学与定量SPECT重建研究</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Tian Zifeng (田子枫)</td>
+                                        <td><a href="mailto:tianzifeng1990@pku.edu.cn" style="color: #0066cc;">tianzifeng1990@pku.edu.cn</a></td>
+                                        <td>动态PET的图像增强与定量分析</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Chen Yixin (陈亦新)</td>
+                                        <td><a href="mailto:yixinchen970320@126.com" style="color: #0066cc;">yixinchen970320@126.com</a></td>
+                                        <td>基于多模态的医学图像分割方法及应用</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Shao Wenrui (邵闻睿)</td>
+                                        <td><a href="mailto:wenrui_shao@stu.pku.edu.cn" style="color: #0066cc;">wenrui_shao@stu.pku.edu.cn</a></td>
+                                        <td>基于神经网络的动态PET参数估计方法与应用研究</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Zhao Xin (赵鑫)</td>
+                                        <td><a href="mailto:xzhao@bjmu.edu.cn" style="color: #0066cc;">xzhao@bjmu.edu.cn</a></td>
+                                        <td>基于Lu-176自发辐射的衰减校正方法与应用研究</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Jiao Wenpei (焦文沛)</td>
+                                        <td><a href="mailto:jwp@stu.pku.edu.cn" style="color: #0066cc;">jwp@stu.pku.edu.cn</a></td>
+                                        <td>基于多模态大语言模型的PET/CT自动报告生成</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Ma Kun (马琨)</td>
+                                        <td><a href="mailto:makun8049@163.com" style="color: #0066cc;">makun8049@163.com</a></td>
+                                        <td>口腔癌隐匿性颈部淋巴结转移</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Xu Ruoyan (徐若妍)</td>
+                                        <td><a href="mailto:xuruoyan@stu.pku.edu.cn" style="color: #0066cc;">xuruoyan@stu.pku.edu.cn</a></td>
+                                        <td>基于多模态图像的阿尔茨海默病智能化诊断与分期分型</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Wang Yuyao (王语瑶)</td>
+                                        <td><a href="mailto:wangyuyao0510@yeah.net" style="color: #0066cc;">wangyuyao0510@yeah.net</a></td>
+                                        <td>TOF-PET探测器时间分辨率优化</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Wang Yang (汪洋)</td>
+                                        <td><a href="mailto:wang_yang@bjmu.edu.cn" style="color: #0066cc;">wang_yang@bjmu.edu.cn</a></td>
+                                        <td>基于脑组织间液动力学的阿尔茨海默症病理机制研究</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Deng Zhengyan (邓政言)</td>
+                                        <td><a href="mailto:2301213591@pku.edu.cn" style="color: #0066cc;">2301213591@pku.edu.cn</a></td>
+                                        <td>基于深度学习的脑PET无CT衰减校正</td>
+                                    </tr>
+                                    <tr style="height: 30px;">
+                                        <td>Xu Haowei (徐皓玮)</td>
+                                        <td><a href="mailto:haoweixu@stu.pku.edu.cn" style="color: #0066cc;">haoweixu@stu.pku.edu.cn</a></td>
+                                        <td>基于科学机器学习的神经元细胞微环境仿真、控制与设计</td>
+                                    </tr>
+                                </table>
+                        </div>
+
+                    </section>
+
                     <p id="paper" style="height:4rem;margin: 0;">&nbsp;</p>
                     <section style="font-size: 1.8rem;">
                         <h3>Publications</h3>
                         <div class="tabs">
-                            <div class="tab" onclick="showPapers('patents')">Invention Patents</div>
+                            <!-- <div class="tab" onclick="showPapers('patents')">Invention Patents</div> -->
 
                             <div class="tab" onclick="showPapers('0000')">All Papers</div>
                             <div class="tab" onclick="showPapers('2025')">2025</div>
@@ -402,6 +637,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                         
                         <div id="notification">The bib of the selected paper has copied!</div>
 
+                        <!--                      
                         <div id="patents" class="paper-list">
                             <ol>
                                 <li><p align="justify">焦文沛, <b>谢肇恒</b>, 陈亦新. 数据处理系统及数据处理方法. CN Patent App. CN202410191474.2.
@@ -426,7 +662,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                                 </li>
                                 <li><p align="justify">Qi, J., <b>Xie, Z.</b>, Li, T., Qi, W. and Asma, E. Scatter estimation for PET from image-based Convolutional Neural Network. U.S. Patent Application, Pending to file.
                                     <br>[<a href="#" onclick="copyTextAndNotify(event, '@patent{Qi2021Scatter, author={Qi, J. and Xie, Z. and Li, T. and Qi, W. and Asma, E.}, title={Scatter estimation for PET from image-based Convolutional Neural Network}, note={Pending}}')">bib</a>]
-                                     <!-- [<a href="https://patents.google.com/patent/US20210304457A1/en?oq=+U.S.+Patent+Application+17%2f180%2c182" target="_blank">Google Patents</a>] -->
+                                     [<a href="https://patents.google.com/patent/US20210304457A1/en?oq=+U.S.+Patent+Application+17%2f180%2c182" target="_blank">Google Patents</a>]
                                     </p>
                                 </li>
                                 <li><p align="justify">翟晓晖, <b>谢肇恒</b>, 于泽宽, 周坤, 李素莹, 田涧, 曾海宁. 一种PET‑荧光双模态术中导航成像系统及其成像方法. CN Patent App. CN201611046753.1.
@@ -445,7 +681,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                                     </p>
                                 </li>
                             </ol>
-                        </div>
+                        </div> -->
                         
                         <div id="0000" class="paper-list">
                             <ol>
@@ -467,10 +703,6 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                                     <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{xu2025multiorgan, author={Xu, R. and Duan, Y. and Gao, L. and Chen, Y. and Cheng, Z. and Xie, Z.}, title={Multiorgan Metabolic Dysregulation in Alzheimer\'s Disease: Total-body PET/CT Reveals Systemic Network Interactions with Amyloid Burden}, booktitle={Annual Congress of the European Association of Nuclear Medicine (EANM)}, year={2025}}')">bib</a>]
                                     </p>
                                 </li>
-                                <!-- <li><p align="justify">(<i><strong>Fully 3D'25</strong></i>) - Zhao, W., Zhao, X., Dong, Z., Ren, Q., and <b>Xie, Z.*</b>, "Load Balancing for Multi-GPU Total-Body PET Image Reconstruction", in <i>Proc. of the 18th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2025
-                                    <br>[<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{zhao2025load, author={Zhao, W. and Zhao, X. and Dong, Z. and Ren, Q. and Xie, Z.}, title={Load Balancing for Multi-GPU Total-Body PET Image Reconstruction}, booktitle={Proc. of the 18th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully 3D)}, year={2025}}')">bib</a>]
-                                    </p>
-                                </li> -->
                                 <li><p align="justify">(<i><strong>Fully 3D'25</strong></i>) - Zhao, W., Zhao, X., Dong, Z., Ren, Q., and <b>Xie, Z.*</b>, "Load Balancing for Multi-GPU Total-Body PET Image Reconstruction", in <i>Proc. of the 18th Intl. Meeting on Fully 3D Image Reconstruction</i>, 2025
                                  <br>
                                  [<a href="#" onclick="copyTextAndNotify(event, '@inproceedings{zhao2025load, author={Zhao, W. and Zhao, X. and Dong, Z. and Ren, Q. and Xie, Z.}, title={Load Balancing for Multi-GPU Total-Body PET Image Reconstruction}, booktitle={Proc. of the 18th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully 3D)}, year={2025}}')">bib</a>]
@@ -637,7 +869,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                                     </p>
                                 </li>
                             </ol>
-                        </div>
+                        </div> 
 
                         <div id="2025" class="paper-list active">
                             <ol>
@@ -736,7 +968,8 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                         </div>
 
                         <div id="2022" class="paper-list">
-                            <li><p align="justify">(<i><strong>Front. Oncol.'22</strong></i>) - Kang, Y., Zhai, X., Lu, S., Vuletic, I., Wang, L., Zhou, K., Ren, Q.*, and <b>Xie, Z.*</b>, "A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time", in <i>Frontiers in Oncology</i>, vol. 12, pp. 772392, 2022
+                            <ol>
+                                <li><p align="justify">(<i><strong>Front. Oncol.'22</strong></i>) - Kang, Y., Zhai, X., Lu, S., Vuletic, I., Wang, L., Zhou, K., Ren, Q.*, and <b>Xie, Z.*</b>, "A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time", in <i>Frontiers in Oncology</i>, vol. 12, pp. 772392, 2022
                                     <br>[<a href="#" onclick="copyTextAndNotify(event, '@article{kang2022hybrid, author={Kang, Y. and Zhai, X. and Lu, S. and Vuletic, I. and Wang, L. and Zhou, K. and Xie, Z.}, title={A Hybrid Imaging Platform (CT/PET/FMI) for Evaluating Tumor Necrosis and Apoptosis in Real-Time}, journal={Frontiers in Oncology}, volume={12}, pages={772392}, year={2022}}')">bib</a>]
                                     [<a href="https://doi.org/10.3389/fonc.2022.772392" target="_blank">DOI</a>]
                                     </p>
@@ -909,10 +1142,112 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
                                 <td><ul><li>IEEE Engineering in Medicine and Biology Conference (EMBC)</li></ul></td>
                             </tr>
                         </table>
+                    </section>
+                    <p id="Lives" style="height:4rem;margin: 0;">&nbsp;</p>
+                    <section>
+                        <h3 style="margin-top: 20px;">Lab Lives</h3>
+                        <div class="slider-container">
+                            <div class="slider" id="slider"> <div class="slide">
+                                <img src="common/img/team1.jpg" alt="Team Photo 1">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team2.jpg" alt="Team Photo 2">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team3.jpg" alt="Team Photo 3">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team4.jpg" alt="Team Photo 4">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team5.jpg" alt="Team Photo 5">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team6.jpg" alt="Team Photo 6">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team7.jpg" alt="Team Photo 7">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team8.jpg" alt="Team Photo 8">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team9.jpg" alt="Team Photo 9">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team10.jpg" alt="Team Photo 10">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team11.jpg" alt="Team Photo 11">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team12.jpg" alt="Team Photo 12">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team13.jpg" alt="Team Photo 13">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team14.jpg" alt="Team Photo 14">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team15.jpg" alt="Team Photo 15">
+                            </div>
+                            <!-- -----------------------------Repeat------------------------------ -->
+                            <div class="slide">
+                                <img src="common/img/team1.jpg" alt="Team Photo 1">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team2.jpg" alt="Team Photo 2">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team3.jpg" alt="Team Photo 3">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team4.jpg" alt="Team Photo 4">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team5.jpg" alt="Team Photo 5">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team6.jpg" alt="Team Photo 6">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team7.jpg" alt="Team Photo 7">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team8.jpg" alt="Team Photo 8">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team9.jpg" alt="Team Photo 9">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team10.jpg" alt="Team Photo 10">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team11.jpg" alt="Team Photo 11">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team12.jpg" alt="Team Photo 12">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team13.jpg" alt="Team Photo 13">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team14.jpg" alt="Team Photo 14">
+                            </div>
+                            <div class="slide">
+                                <img src="common/img/team15.jpg" alt="Team Photo 15">
+                            </div>
+                        </div>
+                    </section>
                 </div>
+            
             </div>
+            
         </dic>
     </div>
+    
+    
 
     <script type="text/javascript" src="common/js/jquery.min.js"></script>
     <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
@@ -1044,8 +1379,88 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
         }
     </Script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- 新增合并script -->
+    <script type="text/javascript" src="common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+    $('.navbar-nav li').unbind().on('click',function(){
+        if($(this).hasClass("active")){
+            console.log(1)
+        }else{
+            $(this).addClass("active");
+            $(this).siblings().removeClass('active');
+        }
+    })
+
+    // 显示前5条新闻
+    document.addEventListener("DOMContentLoaded", function() {
+        var newsItems = document.querySelectorAll('.news-item');
+        for (var i = 0; i < 6; i++) {
+            if (newsItems[i]) {
+                newsItems[i].style.display = 'list-item';
+            }
+        }
+    });
+    
+    document.getElementById('show-less').style.display = 'none'; // 隐藏Show Less按钮
+    // Show More功能
+    function showMoreNews() {
+        var newsItems = document.querySelectorAll('.news-item');
+        newsItems.forEach(function(item) {
+            item.style.display = 'list-item'; // 显示所有新闻
+        });
+        document.getElementById('show-more').style.display = 'none'; // 隐藏Show More按钮
+        document.getElementById('show-less').style.display = 'inline-block'; // 显示Show Less按钮
+    }
+
+    // Show Less功能
+    function showLessNews() {
+        var newsItems = document.querySelectorAll('.news-item');
+        for (var i = 0; i < newsItems.length; i++) {
+            if (i < 6) {
+                newsItems[i].style.display = 'list-item'; // 显示前5条新闻
+            } else {
+                newsItems[i].style.display = 'none'; // 隐藏其他新闻
+            }
+        }
+        document.getElementById('show-more').style.display = 'inline-block'; // 显示Show More按钮
+        document.getElementById('show-less').style.display = 'none'; // 隐藏Show Less按钮
+    }
+
+    // 滚动
+    const slider = document.getElementById('slider');
+    let sliderWidth = slider.scrollWidth;
+    let containerWidth = document.querySelector('.slider-container').offsetWidth;
+    let currentPosition = 0;
+
+    function startSlider() {
+        currentPosition -= 1; // 控制滚动速度
+
+        if (Math.abs(currentPosition) >= sliderWidth / 2) {
+            currentPosition = 0; // 当滚动到一半时重置
+        }
+
+        slider.style.left = currentPosition + 'px';
+
+        requestAnimationFrame(startSlider);
+    }
+
+    // 复制图片以实现无缝滚动
+    function cloneImages() {
+        let images = slider.querySelectorAll('img');
+        images.forEach(img => {
+            let clone = img.cloneNode(true);
+            slider.appendChild(clone);
+        });
+        sliderWidth = slider.scrollWidth; // 更新slider的宽度
+    }
+
+    cloneImages();
+    startSlider();
+
     </script>
 </body>
 </html>
