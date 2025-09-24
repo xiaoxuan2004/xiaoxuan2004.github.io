@@ -102,7 +102,7 @@ section{
 }
 /* add:添加针对图片的样式 (推荐使用方案二) */
 .lab-title {
-    font-size: 2.8rem;   /* 调整为希望的大小，rem是相对单位，也可以用 40px 等绝对单位 */
+    font-size: 3.5rem;   /* 调整为希望的大小，rem是相对单位，也可以用 40px 等绝对单位 */
     font-weight: bold;   /* 设置为粗体 */
     color: #820000;      /* 北大红 */
     text-align: center;  /* 如果需要居中，可以加上这行 */
@@ -343,3 +343,49 @@ section{
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
 }
 
+
+
+/* 右侧封面展示区域的样式 */
+.cover-showcase {
+    padding-top: 50px; /* 调整与上方内容的距离 */
+    position: sticky; /* 让这个区域在滚动时固定在屏幕上 */
+    top: 20px; /* 固定在距离顶部20px的位置 */
+}
+
+.cover-showcase h4 {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* 图片容器 */
+.image-holder {
+    margin-bottom: 10px; /* 图片和下方标题的间距 */
+}
+
+.image-holder img {
+    max-width: 250px; /* 限制图片最大宽度 */
+    width: 100%; /* 图片宽度自适应容器 */
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 封面标题 */
+.cover-caption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px; /* 每组图片和标题之间的间距 */
+}
+
+/* 默认隐藏所有的封面分组 */
+.cover-group {
+    display: none;
+}
+
+/* 只显示拥有 active 类的封面分组 */
+.cover-group.active {
+    display: block;
+}
