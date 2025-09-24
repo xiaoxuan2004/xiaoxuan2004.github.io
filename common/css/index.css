@@ -345,7 +345,7 @@ section{
 
 
 
-/* 右侧封面展示区域的样式 */
+/* 新增：右侧封面展示区域的样式 */
 .cover-showcase {
     padding-top: 50px; /* 调整与上方内容的距离 */
     position: sticky; /* 让这个区域在滚动时固定在屏幕上 */
