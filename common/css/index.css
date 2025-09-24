@@ -360,11 +360,11 @@ section{
 
 /* 图片容器 */
 .image-holder {
-    margin-bottom: 10px; /* 图片和下方标题的间距 */
+    margin-bottom: 10px; /* 图片和下方标题的间距*/
 }
 
 .image-holder img {
-    max-width: 250px; 
+    max-width: 250px; /*最大宽度 */
     width: 100%; 
     /* width: 250px;  */
     height: auto;
