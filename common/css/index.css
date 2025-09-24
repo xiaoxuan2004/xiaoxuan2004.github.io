@@ -103,7 +103,7 @@ section{
 /* add:添加针对图片的样式 (推荐使用方案二) */
 .lab-title {
     /* font-size: 2.8rem;   调整为希望的大小，rem是相对单位，也可以用 40px 等绝对单位 */
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;   /* 设置为粗体 */
     color: #820000;      /* 北大红 */
     text-align: center;  /* 如果需要居中，可以加上这行 */
