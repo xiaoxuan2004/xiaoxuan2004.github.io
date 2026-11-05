@@ -1,0 +1,4 @@
+﻿fold,k,features,outer_AP,outer_AUROC
+1,4,"lab_5237_min, lab_5225_range, lab_5257_min, age_month",0.16229221049061407,0.7112654285318047
+2,6,"lab_5237_min, lab_5257_min, lab_5225_range, age_month, lab_5235_max, lab_5227_min",0.19962840000397047,0.71694440590969
+3,5,"lab_5237_min, lab_5257_min, lab_5225_range, lab_5227_min, lab_5235_max",0.18922767499494297,0.7147739358627546

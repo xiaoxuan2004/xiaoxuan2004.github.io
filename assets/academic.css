@@ -1,0 +1,175 @@
+/* Academic homepage: typography, two-column profile, timeline and photo gallery. */
+:root{--paper:#fff;--page:#f8f9fc;--ink:#1e2d43;--body:#4b5666;--muted:#748092;--accent:#235b84;--line:#e4e9ef;--soft:#f2f5f8;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--paper);color:var(--body);font:16px/1.85 var(--sans);-webkit-font-smoothing:antialiased}a{color:var(--accent);text-decoration:none;text-underline-offset:4px}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:5px}button{font:inherit;cursor:pointer}img{max-width:100%;display:block}h1,h2,h3,h4,p{margin:0}h1,h2,h3,h4{color:var(--ink)}.skip-link{position:fixed;left:20px;top:-100px;background:var(--ink);color:white;padding:8px 18px;z-index:100}.skip-link:focus{top:10px}
+/* 1. Quiet, persistent navigation. */
+.site-header{position:sticky;top:0;z-index:20;background:#ffffffed;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.navigation{max-width:1180px;margin:auto;padding:20px 36px;display:flex;align-items:center;justify-content:space-between;gap:25px}.wordmark{font-family:var(--serif);font-size:23px;letter-spacing:-.6px;color:var(--ink);font-weight:700;white-space:nowrap}.wordmark span{color:var(--accent)}.wordmark:hover{text-decoration:none}.navigation ul{display:flex;list-style:none;gap:29px;padding:0;margin:0}.navigation li{display:flex;align-items:center}.navigation li a{font-size:13px;color:#5c6676;white-space:nowrap}.navigation li a[aria-current]{color:var(--accent)}.menu-toggle{display:none;background:none;border:1px solid var(--line);padding:5px 12px;color:var(--ink);font-size:13px}
+/* 2. About: portrait and short contact information on the left; biography on the right. */
+.page{max-width:1140px;margin:0 auto;padding:0 36px}.about-section{display:grid;grid-template-columns:264px minmax(0,1fr);gap:72px;padding:70px 0 72px}.profile{min-width:0}.portrait-frame{width:100%;aspect-ratio:4/5;background:#edf1f5;overflow:hidden;border:1px solid var(--line)}.portrait{width:100%;height:100%;object-fit:cover}.portrait-placeholder{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#8a98a7;background:linear-gradient(145deg,#f1f4f7,#e5ebf0)}.portrait-placeholder svg{width:90px;height:110px;stroke:#9baab9;stroke-width:1;fill:none;margin-bottom:12px}.portrait-placeholder span{font-size:10px;letter-spacing:.18em;text-transform:uppercase}.profile-role{display:flex;align-items:center;gap:8px;color:#5b6775;font-size:13px;margin:22px 0 13px}.status-dot{width:5px;height:5px;border-radius:50%;background:#558c85}.affiliations{display:grid;gap:5px;font-size:12px;line-height:1.7}.affiliations a span{font-size:10px;color:#8b97a4}.contact-info{font-size:12px;line-height:1.8;margin:21px 0 0;padding-top:17px;border-top:1px solid var(--line)}.contact-info>div{margin-bottom:12px}.contact-info dt{color:var(--ink);font-weight:600}.contact-info dd{margin:0;overflow-wrap:anywhere}.biography{padding-top:12px}.section-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:12px}h1{font-family:var(--serif);font-size:62px;line-height:1.1;letter-spacing:-2px;font-weight:500}.research-line{font-size:11px;letter-spacing:.015em;color:var(--accent);margin:23px 0 33px;line-height:2}.research-line span{color:#c4cdd5;margin:0 6px}.bio-copy{font-size:15px;line-height:1.95}.bio-copy p+p{margin-top:22px}.bio-copy a{border-bottom:1px solid #c1d1dd}.bio-copy a:hover{text-decoration:none;border-bottom-color:var(--accent)}.about-links{display:flex;flex-wrap:wrap;gap:22px;font-size:12px;margin-top:35px;padding-top:24px;border-top:1px solid var(--line)}.about-links span{font-size:11px;margin-left:3px}
+/* 3. Education and experience: dates remain aligned with their entries. */
+.content-section{padding:58px 0 66px;border-top:1px solid var(--line)}.section-heading{margin-bottom:35px}h2{font-family:var(--serif);font-size:36px;letter-spacing:-.8px;line-height:1.2;font-weight:500}.timeline{margin-top:5px}.experience{display:grid;grid-template-columns:175px minmax(0,1fr) 70px;gap:24px;position:relative;padding:0 0 30px 19px;border-left:1px solid #dce4eb;margin-left:4px}.experience:last-child{padding-bottom:3px}.experience:before{content:'';width:7px;height:7px;position:absolute;left:-4px;top:8px;background:#fff;border:1.5px solid #8098ab;border-radius:50%}.experience-date{font-size:11px;line-height:1.8;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}.experience h3{font-size:14px;font-weight:600;line-height:1.6}.unit{font-size:12px;margin-top:1px;color:#6c7787}.position{font-size:13px;color:#3e556c;margin-top:7px}.advisors{font-size:12px;line-height:1.8;color:var(--muted);margin-top:3px}.entry-kind{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#8792a0;text-align:right;padding-top:4px}
+/* 4. Research interests and selected projects use restrained editorial layouts. */
+.research-subsection{scroll-margin-top:100px}.subheading{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6a788a;margin-bottom:25px}.interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}.interest{position:relative;padding:25px 27px 27px;background:#f6f8fa;border-top:2px solid #b9cddc}.interest-index{font:italic 17px var(--serif);color:#879bac;display:block;margin-bottom:13px}.interest h4{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.35;margin-bottom:15px}.interest p{font-size:13px;line-height:1.95}.projects-section{margin-top:51px}.project-list{border-top:1px solid var(--line)}.research-project{display:grid;grid-template-columns:47px minmax(0,1fr);gap:19px;padding:29px 0 31px;border-bottom:1px solid var(--line)}.research-project:last-child{border-bottom:0;padding-bottom:0}.project-index{font:italic 25px/1.3 var(--serif);color:#b6c0cb;padding-top:25px}.project-topics{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}.research-project h4{font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.45;letter-spacing:-.2px;max-width:850px}.research-project p{font-size:13px;line-height:1.95;margin-top:14px;max-width:900px}
+/* 5. Beyond research: one personal note followed by a photo carousel. */
+.beyond-copy{max-width:850px;font-size:14px;line-height:2}.beyond-copy p+p{margin-top:17px}.life-gallery{margin-top:32px;border:1px solid var(--line);overflow:hidden;background:var(--page);touch-action:pan-y}.gallery-track{display:flex;transition:transform .5s ease}.gallery-slide{flex:0 0 100%;margin:0;position:relative;height:360px;overflow:hidden}.gallery-slide img{width:100%;height:100%;object-fit:cover}.photo-placeholder{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#eef2f4}.gallery-slide:nth-child(2) .photo-placeholder{background:#eff1f5}.gallery-slide:nth-child(3) .photo-placeholder{background:#f3f0ed}.photo-placeholder .photo-number{font-family:var(--serif);font-size:64px;font-style:italic;color:#c2ccd4;line-height:1}.photo-placeholder p{font-family:var(--serif);font-size:24px;color:#71808f}.photo-placeholder small{font-size:10px;color:#8c98a3;letter-spacing:.1em;text-transform:uppercase}.gallery-slide figcaption{position:absolute;left:24px;bottom:19px;color:#fff;font-size:13px;text-shadow:0 1px 8px #0008}.gallery-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;background:#fff}.gallery-caption{display:flex;gap:24px;align-items:center}.gallery-caption-label{font-size:11px;color:#566679}#gallery-counter{font-size:10px;letter-spacing:.06em;color:#8c99a6;font-variant-numeric:tabular-nums}.gallery-controls{display:flex;gap:7px;align-items:center}.gallery-controls button{background:none;border:1px solid var(--line);color:var(--ink);padding:3px 10px;min-width:32px;height:30px;font-size:13px}.gallery-controls button:hover{background:var(--soft)}.gallery-controls .gallery-pause{font-size:10px;min-width:48px}.gallery-dots{display:flex;justify-content:center;gap:8px;padding:0 0 15px;background:#fff}.gallery-dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:#d8dfe5}.gallery-dots button[aria-current]{background:var(--accent)}.site-footer{border-top:1px solid var(--line);max-width:1068px;margin:0 auto;padding:27px 0 35px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#8a95a2}.site-footer div{display:flex;gap:22px}.site-footer a{color:#718092}
+/* 6. Responsive layouts preserve reading order and accessible controls. */
+@media(min-width:1400px){.about-section{padding-top:82px}}
+@media(max-width:950px){.navigation{padding:18px 28px}.navigation ul{gap:18px}.navigation li a{font-size:11px}.page{padding:0 28px}.about-section{grid-template-columns:230px minmax(0,1fr);gap:42px}h1{font-size:51px}.research-line{font-size:10px}.bio-copy{font-size:14px}.experience{grid-template-columns:148px minmax(0,1fr);gap:18px}.entry-kind{display:none}.site-footer{margin:0 28px}.interest-grid{gap:24px}}
+@media(max-width:700px){html{scroll-padding-top:80px}.navigation{padding:14px 22px;flex-wrap:wrap;gap:12px}.wordmark{font-size:22px}.menu-toggle{display:flex;gap:12px;align-items:center}.navigation ul{display:none;width:100%;flex-direction:column;gap:0;border-top:1px solid var(--line);padding-top:8px}.navigation.menu-open ul{display:flex}.navigation li a{font-size:13px;padding:8px 0}.page{padding:0 23px}.about-section{display:flex;flex-direction:column;gap:34px;padding:38px 0 44px}.profile{display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:22px;align-items:start}.portrait-frame{grid-row:1/5;aspect-ratio:4/5}.portrait-placeholder svg{width:47px;height:57px;margin-bottom:6px}.portrait-placeholder span{font-size:8px;letter-spacing:.08em}.profile-role{font-size:11px;margin:0 0 9px}.affiliations{font-size:10px;gap:3px}.contact-info{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:18px;padding-top:14px;font-size:11px}.contact-info>div{margin:0}.contact-info>div:last-child{grid-column:1/-1}.contact-info dd br{display:none}.biography{padding:0}h1{font-size:49px;letter-spacing:-1.4px}.section-label{font-size:9px;margin-bottom:10px}.research-line{font-size:10px;margin:18px 0 22px}.research-line span{margin:0 3px}.bio-copy{font-size:14px;line-height:1.95}.bio-copy p+p{margin-top:19px}.about-links{margin-top:24px;padding-top:20px;gap:20px;font-size:11px}.content-section{padding:36px 0 42px}.section-heading{margin-bottom:27px}h2{font-size:30px}.experience{grid-template-columns:1fr;gap:7px;padding:0 0 27px 18px}.experience-date{font-size:10px}.experience h3{font-size:13px}.unit,.advisors{font-size:11px}.position{font-size:12px;margin-top:5px}.interest-grid{grid-template-columns:1fr;gap:19px}.interest{padding:22px}.interest h4{font-size:21px}.interest p{font-size:13px}.subheading{font-size:10px;margin-bottom:20px}.projects-section{margin-top:35px}.research-project{grid-template-columns:26px minmax(0,1fr);gap:12px;padding:24px 0}.project-index{font-size:20px;padding-top:24px}.project-topics{font-size:8px}.research-project h4{font-size:21px}.research-project p{font-size:13px}.beyond-copy{font-size:13px}.gallery-slide{height:250px}.photo-placeholder .photo-number{font-size:50px}.photo-placeholder p{font-size:20px}.gallery-toolbar{padding:14px 13px}.gallery-caption{gap:9px;flex-wrap:wrap;line-height:1.5}.gallery-caption-label{font-size:10px}.gallery-controls{gap:4px}.gallery-controls button{min-width:28px;padding:3px 7px}.site-footer{margin:0 23px;flex-direction:column;padding:22px 0 28px;gap:10px}.site-footer div{gap:18px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-track{transition:none}}
+
+/* About: larger body text and aligned column endings on wider screens. */
+.bio-copy {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@media (min-width: 701px) {
+  .profile,
+  .biography {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .affiliations {
+    margin-bottom: 21px;
+  }
+
+  .contact-info,
+  .about-links {
+    margin-top: auto;
+  }
+
+  .contact-info > div:last-child {
+    margin-bottom: 0;
+  }
+
+  .bio-copy {
+    padding-bottom: 26px;
+  }
+}
+
+@media (min-width: 951px) {
+  .bio-copy {
+    font-size: 17px;
+  }
+}
+
+.portrait {
+  object-position: center top;
+}
+
+.life-gallery {
+  max-width: 660px;
+  margin-inline: auto;
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: 0 12px 34px #1e2d4312;
+}
+
+.gallery-slide:has(img) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  padding: clamp(10px, 2.2vw, 20px) clamp(10px, 2.2vw, 20px) 0;
+  background: var(--paper);
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.gallery-slide figcaption {
+  position: static;
+  padding: 12px 0 10px;
+  color: var(--ink);
+  font: 17px/1.4 var(--serif);
+  text-shadow: none;
+  text-align: center;
+}
+
+.gallery-toolbar {
+  border-top: 1px solid var(--line);
+  padding-block: 11px;
+}
+
+.gallery-controls button {
+  height: 34px;
+  min-width: 34px;
+  border-radius: 6px;
+}
+
+.gallery-dots {
+  gap: 4px;
+  padding-bottom: 9px;
+}
+
+.gallery-dots button {
+  width: 24px;
+  height: 20px;
+  background: transparent;
+}
+
+.gallery-dots button::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  border-radius: 50%;
+  background: #c4ced7;
+}
+
+.gallery-dots button[aria-current] {
+  background: transparent;
+}
+
+.gallery-dots button[aria-current]::before {
+  width: 16px;
+  border-radius: 5px;
+  background: var(--accent);
+}
+
+@media (min-width: 801px) {
+  .beyond-section {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+  }
+
+  .beyond-section .section-heading {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 24px;
+  }
+
+  .beyond-copy {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: clamp(15px, 1.35vw, 18px);
+    line-height: 1.85;
+  }
+
+  .beyond-copy p + p {
+    margin-top: 0;
+  }
+
+  .life-gallery {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+  }
+}

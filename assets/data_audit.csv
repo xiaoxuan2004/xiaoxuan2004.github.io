@@ -1,0 +1,2 @@
+﻿n,deaths,mortality,negative_age,age_over_216,identical_rows_beyond_first,all_labs_missing,complete_cases_after_age_cleaning,complete_case_deaths,patient_id_available,time_window_verifiable
+13258,780,0.05883240307738724,68,2,4306,4587,8539,587,False,False

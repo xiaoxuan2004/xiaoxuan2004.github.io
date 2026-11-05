@@ -1,0 +1,7 @@
+﻿k,features,inner_CV_AP
+1,lab_5237_min,0.15152870642452934
+2,"lab_5237_min, lab_5257_min",0.16941564553753605
+3,"lab_5237_min, lab_5257_min, lab_5225_range",0.17790358595994168
+4,"lab_5237_min, lab_5257_min, lab_5225_range, age_month",0.18075311354775125
+5,"lab_5237_min, lab_5257_min, lab_5225_range, age_month, lab_5227_min",0.18084239492335086
+6,"lab_5237_min, lab_5257_min, lab_5225_range, age_month, lab_5227_min, lab_5235_max",0.18231091939259517
