@@ -1,0 +1,3 @@
+﻿protocol,train_n,test_n,train_deaths,test_deaths,train_subjects,test_subjects,shared_subjects,test_records_shared_subjects
+official_seed0,10606,2652,630,150,10235,2629,174,181
+patient_group,10610,2648,618,162,10152,2538,0,0

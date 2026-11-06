@@ -2,7 +2,7 @@
 # # PIC 院内死亡预测：课程作业分析
 # 本分析承接教师的6特征示例，增加统计推断、交叉验证、缺失指示变量、
 # 随机森林、概率校准检查及bootstrap置信区间。
-# 所有数量均指记录；数据没有患者ID，无法验证患者独立性或24小时采集窗口。
+# 主分析读取不含ID的教学Excel；扩展分析用已逐行核对的上游CSV评价患者分组。
 # 将data.xlsx放在本目录或data/目录。也可设置环境变量PIC_DATA_PATH指定路径。
 
 # %%
@@ -57,7 +57,7 @@ SHORT = {"Dummy": "无信息基线", "LR": "普通LR", "LR_balanced": "平衡权
 COLORS.append("#9a5816")
 SHORT["RF_plain"] = "随机森林（无指示）"
 sns.set_theme(style="whitegrid", font="Microsoft YaHei", rc={"axes.unicode_minus": False})
-plt.rcParams.update({"figure.dpi": 120, "savefig.dpi": 200, "axes.spines.top": False, "axes.spines.right": False})
+plt.rcParams.update({"figure.dpi": 120, "savefig.dpi": 200, "pdf.fonttype": 42, "ps.fonttype": 42, "axes.spines.top": False, "axes.spines.right": False})
 versions = {name: metadata.version(name) for name in ["pandas", "numpy", "scipy", "scikit-learn", "statsmodels", "matplotlib", "seaborn", "shap", "joblib", "nbformat", "nbclient", "ipykernel", "openpyxl"]}
 print("Python", platform.python_version())
 display(pd.Series(versions, name="version").to_frame())
@@ -147,7 +147,7 @@ axes[0].bar_label(axes[0].containers[0], fmt="%d", padding=3)
 missing_sorted = data[FEATURES].isna().mean().sort_values()
 axes[1].barh(missing_sorted.index, missing_sorted.values, color=COLORS[2])
 axes[1].set(title="清理后特征缺失率", xlabel="缺失比例", xlim=(0, .45))
-for i, v in enumerate(missing_sorted): axes[1].text(v+.006, i, f"{v:.1%}", va="center", fontsize=8)
+for i, v in enumerate(missing_sorted): axes[1].text(v+.006, i, f"{v:.1%}", va="center", fontsize=10)
 pattern = pd.crosstab(all_lab_missing, y).rename(index={False: "至少一项实验室有值", True: "五项实验室全缺失"})
 pattern["mortality"] = pattern[1] / (pattern[0] + pattern[1])
 axes[2].bar(["至少一项\n实验室有值", "五项实验室\n均缺失"], pattern["mortality"], color=[COLORS[1], COLORS[2]])
@@ -160,12 +160,12 @@ missing_group.columns = ["feature", "missing_survived", "missing_died"]
 display(save_table(missing_group, "missing_by_outcome"))
 display(save_table(pattern.reset_index(names="all_labs_missing"), "missing_patterns"))
 
-fig, axes = plt.subplots(3, 2, figsize=(11, 9), constrained_layout=True)
+fig, axes = plt.subplots(3, 2, figsize=(7.2, 6.4), constrained_layout=True)
 for column, ax in zip(FEATURES, axes.flat):
     sns.histplot(data=data, x=column, bins=35, color=COLORS[1], ax=ax)
     ax.set(title=column, xlabel="月" if column == "age_month" else "原始数值（单位未知）", ylabel="记录数")
 show_figure("02_distributions")
-fig, axes = plt.subplots(3, 2, figsize=(11, 9), constrained_layout=True)
+fig, axes = plt.subplots(3, 2, figsize=(7.2, 6.4), constrained_layout=True)
 for column, ax in zip(FEATURES, axes.flat):
     sns.boxplot(data=data, x=TARGET, y=column, showfliers=False, color="#9ccdbb", ax=ax)
     ax.set(title=column, xlabel="0=存活，1=死亡", ylabel="月" if column == "age_month" else "原始数值")
@@ -312,15 +312,14 @@ cv_results = pd.DataFrame(cv_rows)
 display(save_table(cv_results, "CV_model_comparison"))
 best_name = cv_results[cv_results.model != "Dummy"].sort_values("CV_AP_mean", ascending=False).iloc[0]["model"]
 print("按训练CV AP锁定主模型:", best_name)
-assert best_name == "RF_missing"
-rf_plain = clone(fitted[best_name]).set_params(imputer__add_indicator=False)
+rf_plain = clone(fitted["RF_missing"]).set_params(imputer__add_indicator=False)
 ablation = GridSearchCV(rf_plain, {}, scoring={"AP": "average_precision", "AUROC": "roc_auc", "neg_Brier": "neg_brier_score"}, refit="AP", cv=cv5, error_score="raise").fit(X_train, y_train)
 fitted["RF_plain"] = ablation.best_estimator_
 scores = ablation.cv_results_
 cv_results = pd.concat([cv_results, pd.DataFrame([{
     "model": "RF_plain", "CV_AP_mean": scores["mean_test_AP"][0], "CV_AP_sd": scores["std_test_AP"][0],
     "CV_AUROC_mean": scores["mean_test_AUROC"][0], "CV_Brier_mean": -scores["mean_test_neg_Brier"][0],
-    "best_params": json.dumps(searches[best_name].best_params_),
+    "best_params": json.dumps(searches["RF_missing"].best_params_),
 }])], ignore_index=True)
 save_table(cv_results, "CV_model_comparison")
 
@@ -352,7 +351,7 @@ display(save_table(pd.DataFrame(threshold_rows), "train_thresholds"))
 # AUROC、AP、Brier使用连续预测；敏感度、特异度、F1使用冻结阈值。
 # Bootstrap固定训练完成的模型，对测试记录分层重采样1000次。
 # CI反映该模型在测试样本中的抽样不确定性，不覆盖训练和调参的不确定性。
-# 无患者ID，CI只能按行重采样，可能低估患者内相关性带来的不确定性。
+# 下列是原主分析的记录级区间；扩展部分另报告按SUBJECT_ID聚类的区间。
 
 # %%
 def evaluate(yt, probability, threshold):
@@ -415,13 +414,17 @@ show_figure("06_ROC_PR")
 # 类别权重可能提高少数类召回，但并不保证概率准确。
 
 # %%
-calibration_rows = []
-fig, axes = plt.subplots(1, 2, figsize=(6.6, 3.5), layout="constrained")
+calibration_rows, calibration_bins = [], []
+fig, calibration_axes = plt.subplots(2, 2, figsize=(7, 4.8), height_ratios=[3, 1], layout="constrained")
+axes = calibration_axes[0]
 for (name, probability), color in zip(test_probabilities.items(), COLORS):
     if name in {"Dummy", "RF_plain"}: continue
-    prob_true, prob_pred = calibration_curve(y_test, probability, n_bins=8, strategy="quantile")
-    ax = axes[int(name == "LR_balanced")]
-    ax.plot(prob_pred, prob_true, "o-", color=color, label=SHORT[name], markersize=4)
+    panel = int(name == "LR_balanced")
+    bins = pd.qcut(probability, 8, labels=False, duplicates="drop")
+    grouped = pd.DataFrame({"bin": bins, "probability": probability, "outcome": test_y}).groupby("bin", observed=True).agg(n=("outcome", "size"), deaths=("outcome", "sum"), predicted=("probability", "mean"), observed=("outcome", "mean")).reset_index()
+    calibration_bins.extend([{"model": name, **row} for row in grouped.to_dict("records")])
+    axes[panel].scatter(grouped.predicted, grouped.observed, color=color, label=SHORT[name], s=30, marker={"LR":"o", "LR_missing":"^", "RF_missing":"s", "LR_balanced":"D"}[name])
+    calibration_axes[1, panel].hist(probability, bins=np.linspace(0, [.3, 1][panel], 16), histtype="step", color=color, linewidth=1.3)
     lp = logit(np.clip(probability, 1e-6, 1-1e-6))
     cf = sm.GLM(test_y, sm.add_constant(lp), family=sm.families.Binomial()).fit()
     ci = cf.conf_int()
@@ -429,8 +432,12 @@ for (name, probability), color in zip(test_probabilities.items(), COLORS):
 for ax, limit, title in zip(axes, [.3, 1], ["普通LR、指示LR及主模型", "平衡权重LR"]):
     ax.plot([0, limit], [0, limit], "--", color="gray")
     ax.set(title=title, xlabel="平均预测概率", ylabel="实际死亡比例", xlim=(0, limit), ylim=(0, limit))
-    ax.legend(fontsize=9, loc="upper left")
+    ax.legend(fontsize=10, loc="upper left")
+for ax, limit in zip(calibration_axes[1], [.3, 1]):
+    ax.set(xlim=(0, limit), xlabel="预测概率", ylabel="记录数")
+    ax.tick_params(labelsize=10)
 show_figure("07_calibration_split")
+save_table(pd.DataFrame(calibration_bins), "calibration_bins")
 fig, ax = plt.subplots(figsize=(5, 3.5), layout="constrained")
 main_probability = test_probabilities[best_name]
 main_threshold = thresholds[best_name]
@@ -540,16 +547,13 @@ assert np.allclose(shap_values.base_values + shap_values.values.sum(axis=1), cla
 shap_importance = pd.DataFrame({"feature": FEATURES, "mean_abs_SHAP_log_odds": np.abs(shap_values.values).mean(axis=0)}).sort_values("mean_abs_SHAP_log_odds", ascending=False)
 display(save_table(shap_importance, "reference_SHAP_importance"))
 shap.plots.bar(shap_values, max_display=6, show=False)
-plt.title("参考平衡LR：平均绝对SHAP（log-odds）")
 plt.tight_layout()
 show_figure("09_SHAP_bar")
 shap.plots.beeswarm(shap_values, max_display=6, show=False)
-plt.title("参考平衡LR：SHAP蜂群图（log-odds）")
 plt.tight_layout()
 show_figure("10_SHAP_beeswarm")
 for label, pos in [("high", int(np.argmax(test_probabilities["LR_balanced"][:500]))), ("low", int(np.argmin(test_probabilities["LR_balanced"][:500])))]:
     shap.plots.waterfall(shap_values[pos], max_display=6, show=False)
-    plt.title(f"{label}分数示例：模型分数={test_probabilities['LR_balanced'][pos]:.3f}，log-odds贡献")
     plt.tight_layout()
     show_figure(f"11_SHAP_{label}")
 
@@ -589,7 +593,7 @@ show_figure("13_RF_permutation")
 # ## 13. 保存、复现与研究边界
 # 保存完整Pipeline、软件版本、分割索引、模型指标和原始预测。
 # results/内逐行预测只供本地复核，网页发布目录不包含这些数据。
-# 数据未提供患者ID、时间或正式变量字典，不能验证独立性、采集窗口或临床效用。
+# 教学Excel无ID；上游聚合CSV可用于患者分组，但没有原始事件表以复核采集窗口。
 
 # %%
 for name, model in fitted.items():
@@ -606,10 +610,28 @@ result = {
     "CV_results": cv_results.to_dict(orient="records"),
     "test_metrics": metrics.to_dict(orient="records"),
     "test_CI": confidence_intervals.to_dict(orient="records"),
-    "limitations": ["无患者ID，无法验证患者独立性", "无采集时间，无法验证24小时窗口", "实验室变量名称和单位未知", "特征是否经全数据筛选未知", "完整病例推断受选择偏倚影响", "bootstrap按行且固定模型，CI不含训练不确定性", "单次随机内部验证，缺少外部验证"],
+    "limitations": ["原记录级划分可能患者跨集；扩展分析按上游ID核对并分组验证", "无原始事件时间，无法核验24小时窗口", "实验室变量名称和单位未知", "上游六特征筛选来源未知", "全样本统计仅探索描述，完整病例推断受选择偏倚影响", "固定模型区间不含重新训练与调参不确定性", "缺少外部验证"],
 }
 (ROOT / "results" / "summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
 (ROOT / "requirements.txt").write_text("\n".join(f"{name}=={version}" for name, version in versions.items())+"\n", encoding="utf-8")
 print("主模型:", best_name, "阈值:", thresholds[best_name])
 display(metrics[metrics.threshold_rule == "train_OOF_sens80"])
 print("完成：tables/、figures/、models/、results/。")
+
+# %% [markdown]
+# ## 14. 课堂补充练习与更严格的验证
+# 原主分析保留以便核对。补充均值插补、分数分布、普通LR公式、等预算搜索、
+# 官方划分与患者分组验证，以及仅在原训练集进行的重复嵌套交叉验证。
+# 患者元数据映射以原行序保持为前提，逐行核对所保留的七列后才使用。
+
+# %%
+from extended_analysis import run as run_extended_analysis
+run_extended_analysis()
+for table_name in ["imputation_sensitivity", "matched_budget_CV", "validation_protocols",
+                   "validation_sensitivity_metrics", "repeated_nested_CV_summary"]:
+    print(table_name)
+    display(pd.read_csv(ROOT / "tables" / f"{table_name}.csv"))
+if NOTEBOOK_MODE:
+    from IPython.display import Image
+    for stem in ["14_score_distribution", "15_repeated_nested_CV"]:
+        display(Image(filename=str(ROOT / "figures" / f"{stem}.png")))

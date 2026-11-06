@@ -1,0 +1,6 @@
+﻿model,candidate_configurations,folds,fit_budget,CV_AP_best,best_params
+LR,4,5,20,0.19132263243902042,"{""classifier__C"": 0.01}"
+LR_balanced,4,5,20,0.19151587041260396,"{""classifier__C"": 0.01}"
+LR_missing,4,5,20,0.19125171865418925,"{""classifier__C"": 0.01}"
+RF_plain,4,5,20,0.22468233303310964,"{""classifier__max_depth"": 5, ""classifier__min_samples_leaf"": 5}"
+RF_missing,4,5,20,0.2217678801167342,"{""classifier__max_depth"": null, ""classifier__min_samples_leaf"": 5}"
